@@ -16,7 +16,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SignupActivity"></activity>
+        <activity android:name=".SignupActivity" />
+        <activity android:name=".CommunityListActivity" />
+        <activity android:name=".MyCommunityActivity" />
+        <activity android:name=".GetNewCommunityActivity"></activity>
     </application>
 
 </manifest>
