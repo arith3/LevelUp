@@ -17,7 +17,7 @@ public class CommunityTabActivity  extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_community_tab);
 
                 listView = (ListView)findViewById(R.id.my_listview);
 
