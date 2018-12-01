@@ -16,12 +16,12 @@ public class MyInfo extends AppCompatActivity {
         tabHost1.setup() ;
         // 첫 번째 Tab. (탭 표시 텍스트:"TAB 1"), (페이지 뷰:"content1")
         TabHost.TabSpec ts1 = tabHost1.newTabSpec("Tab Spec 1") ;
-        ts1.setContent(R.id.achieveDay_content) ;
-        ts1.setIndicator("달성현황") ;
+        ts1.setContent(R.id.achieve_content) ;
+        ts1.setIndicator("현황") ;
         tabHost1.addTab(ts1) ;
         // 두 번째 Tab. (탭 표시 텍스트:"TAB 2"), (페이지 뷰:"content2")
         TabHost.TabSpec ts2 = tabHost1.newTabSpec("Tab Spec 2") ;
-        ts2.setContent(R.id.achieve_content) ;
+        ts2.setContent(R.id.achieveDay_content) ;
         ts2.setIndicator("일별") ;
         tabHost1.addTab(ts2) ;
         // 세 번째 Tab. (탭 표시 텍스트:"TAB 3"), (페이지 뷰:"content3")

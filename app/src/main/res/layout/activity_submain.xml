@@ -17,7 +17,9 @@
         android:text="목표설정"
         android:textAllCaps="false"
         android:textSize="36sp"
+        android:layout_above="@+id/imageButton"
         android:textStyle="bold" />
+
 
     <Button
         android:id="@+id/button"
@@ -29,7 +31,8 @@
         android:layout_marginStart="66dp"
         android:layout_marginTop="437dp"
         android:text="취소"
-        android:textAppearance="@style/TextAppearance.AppCompat" />
+        android:layout_below="@+id/imageButton"
+       android:textAppearance="@style/TextAppearance.AppCompat" />
 
     <Button
         android:id="@+id/button2"
@@ -39,6 +42,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="240dp"
         android:layout_marginTop="437dp"
+        android:layout_below="@+id/imageButton"
         android:text="다음" />
 
     <TextView
@@ -49,6 +53,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="56dp"
         android:layout_marginTop="103dp"
+        android:layout_above="@+id/imageButton"
         android:text='"나의 목표는 금연 하는것"'
         android:textSize="18sp"
         android:textStyle="bold" />
@@ -60,6 +65,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="166dp"
+        android:layout_centerInParent="true"
         app:srcCompat="@android:drawable/ic_menu_report_image" />
 
     <TextView
