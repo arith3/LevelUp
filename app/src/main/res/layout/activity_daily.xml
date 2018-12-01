@@ -72,24 +72,31 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="196dp"
+        android:layout_marginBottom="215dp"
         android:text="그룹에서 해야할 일"
         android:textAlignment="center"
         android:textSize="18sp"
         android:textStyle="bold" />
 
-    <android.support.v4.widget.NestedScrollView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/textView9"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="-196dp"
-        android:fillViewport="true">
+        android:orientation="horizontal">
 
-        <LinearLayout
+        <android.support.v4.widget.NestedScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" />
-    </android.support.v4.widget.NestedScrollView>
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+                android:layout_centerHorizontal="true"
+
+
+            android:layout_alignParentBottom="true"
+        </android.support.v4.widget.NestedScrollView>
+    </LinearLayout>
 
 </RelativeLayout>
