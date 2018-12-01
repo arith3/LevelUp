@@ -6,22 +6,93 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/te"
+    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:id="@+id/image"
+        android:src="@drawable/ssibal"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20sp"
+        />
 
     <TextView
-        android:text="ssibal"
-
-        android:layout_marginTop="300dp"
-        android:layout_alignBottom="@+id/te"
+        android:id="@+id/name"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="220sp"
+        android:fontFamily="monospace"
+        android:layout_marginLeft="40sp"
+        android:text="ID"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/pw"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="270sp"
+        android:fontFamily="monospace"
+        android:layout_marginLeft="40sp"
+        android:text="PW"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/SignUpBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/pw"
+        android:layout_marginStart="70sp"
+        android:layout_marginTop="40sp"
+        android:text="회원가입"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/SignInBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/SignUpBtn"
+        android:layout_below="@+id/pw"
+        android:layout_marginTop="40sp"
+        android:layout_marginStart="40sp"
+        android:text="로그인"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:background="#77D9D3"
+        />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/name"
+        android:layout_marginTop="220sp"
+        android:layout_marginStart="20sp"
+        android:layout_centerHorizontal="true"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="ID를 입력하세요" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/editText"
+        android:layout_centerVertical="true"
+        android:layout_below="@+id/editText"
+        android:ems="10"
+        android:inputType="textPassword" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:linksClickable="true"
+        android:autoLink="web"
+        android:text="아이디/비밀번호찾기"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="30sp"
+        android:layout_centerInParent="true"
+        />
 
 </RelativeLayout>
