@@ -60,9 +60,10 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="47dp"
-        android:layout_marginTop="117dp"
+        android:layout_marginStart="57dp"
+        android:layout_marginTop="129dp"
         android:text='"나는 하루에 ______  는 꼭 하겠습니다!!"'
+        android:background="@drawable/border"
         android:textSize="28sp" />
 
     <TextView
