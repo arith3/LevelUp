@@ -26,8 +26,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="84dp"
-        android:layout_marginTop="354dp"
+        android:layout_marginStart="66dp"
+        android:layout_marginTop="437dp"
         android:text="취소"
         android:textAppearance="@style/TextAppearance.AppCompat" />
 
@@ -37,8 +37,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="239dp"
-        android:layout_marginTop="354dp"
+        android:layout_marginStart="240dp"
+        android:layout_marginTop="437dp"
         android:text="다음" />
 
     <TextView
@@ -55,8 +55,8 @@
 
     <ImageButton
         android:id="@+id/imageButton"
-        android:layout_width="213dp"
-        android:layout_height="130dp"
+        android:layout_width="260dp"
+        android:layout_height="211dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="166dp"

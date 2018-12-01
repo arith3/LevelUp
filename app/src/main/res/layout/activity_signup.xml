@@ -95,7 +95,7 @@
         android:layout_centerHorizontal="true"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="ID를 입력하세요" />
+        android:text="ID를 입력하세용" />
 
     <EditText
         android:id="@+id/editText2"
