@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <TextView
+        android:id="@+id/iranai2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="10dp"
+        android:text="나의 목표는"
+        android:textSize="18dp" />
+
+    <TextView
+        android:id="@+id/ingroup_info_title"
+        android:layout_width="123dp"
+        android:layout_height="48dp"
+        android:layout_alignTop="@+id/iranai2"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="2dp"
+        android:layout_toEndOf="@+id/iranai2"
+        android:autoSizeTextType="uniform"
+        android:text="TextView"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/iranai"
+        android:layout_width="69dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="257dp"
+        android:layout_marginTop="40dp"
+        android:text="입니다."
+        android:textSize="18dp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="255dp"
+        android:layout_below="@+id/iranai"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="87dp">
+
+        <TextView
+            android:id="@+id/iranai3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="생존 욕구를 얼마나 충족합니까?" />
+
+        <TextView
+            android:id="@+id/iranai4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="80dp"
+            android:text="관계 욕구를 얼마나 충족합니까?" />
+
+        <TextView
+            android:id="@+id/iranai5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginBottom="76dp"
+            android:text="성장 욕구를 얼마나 충족합니까?" />
+
+        <TextView
+            android:id="@+id/ingroup_info_desire1"
+            android:layout_width="match_parent"
+            android:layout_height="61dp"
+            android:layout_below="@+id/iranai3"
+            android:layout_marginTop="-1dp"
+            android:text="TextView" />
+
+        <TextView
+            android:id="@+id/ingroup_info_desire2"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="96dp"
+            android:text="TextView" />
+
+        <TextView
+            android:id="@+id/ingroup_info_desire3"
+            android:layout_width="match_parent"
+            android:layout_height="76dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="0dp"
+            android:text="TextView" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/ingroup_content"
+        android:layout_width="match_parent"
+        android:layout_height="102dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="407dp"
+        android:ems="10"
+        android:gravity="left"
+        android:inputType="textPersonName"
+        android:text="Name" />
+
+    <ImageView
+        android:id="@+id/ingroup_info_img"
+        android:layout_width="match_parent"
+        android:layout_height="91dp"
+        android:layout_below="@+id/ingroup_info_title"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="5dp"
+        android:scaleType="fitCenter"
+        app:srcCompat="@mipmap/ic_launcher" />
+
+
+</RelativeLayout>

@@ -24,6 +24,7 @@
             android:text="post_title" />
 
         <LinearLayout
+            android:background="@drawable/border"
             android:layout_width="match_parent"
             android:layout_height="229dp"
             android:orientation="vertical">
@@ -125,6 +126,7 @@
             </RelativeLayout>
 
             <RelativeLayout
+
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_alignParentStart="true"
@@ -134,6 +136,7 @@
                 android:orientation="horizontal">
 
                 <ListView
+                    android:background="@drawable/border"
                     android:id="@+id/comment_list"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />

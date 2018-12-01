@@ -8,7 +8,7 @@
 
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/iranai2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -18,18 +18,6 @@
         android:text="나의 목표는"
         android:textSize="18dp" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="205dp"
-        android:layout_height="103dp"
-        android:layout_alignTop="@+id/textView"
-        android:layout_marginStart="-1dp"
-        android:layout_marginTop="12dp"
-        android:layout_toEndOf="@+id/textView"
-        android:autoSizeMaxTextSize="128dp"
-        android:autoSizeMinTextSize="10dp"
-        android:autoSizeTextType="uniform"
-        android:text="temp" />
     <TextView
         android:id="@+id/textView4"
         android:layout_width="69dp"
@@ -41,7 +29,39 @@
         android:text="입니다."
         android:textSize="18dp"/>
 
+    <Button
+        android:id="@+id/reenter_button"
+        android:layout_width="168dp"
+        android:layout_height="63dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="97dp"
+        android:layout_marginBottom="12dp"
+        android:text="설정 완료" />
 
+    <EditText
+        android:id="@+id/reenter_title"
+        android:layout_width="198dp"
+        android:layout_height="115dp"
+        android:layout_alignTop="@+id/iranai2"
+        android:layout_toEndOf="@+id/iranai2"
+        android:autoSizeTextType="uniform"
+        android:ems="10"
+        android:enabled="true"
+        android:inputType="textPersonName"
+        android:text="목표를 적어주세요."
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/reenter_content"
+        android:layout_width="match_parent"
+        android:layout_height="246dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="167dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name" />
 
 
 </RelativeLayout>

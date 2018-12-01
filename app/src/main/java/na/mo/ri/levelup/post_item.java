@@ -20,16 +20,17 @@ public class post_item extends AppCompatActivity implements View.OnClickListener
     ArrayList<comment_item> comment_listArrayList;
     private String name;
     private TextView name_textview;
+    private TextView date_dateview;
     private String title;
     private TextView title_textview;
     private int content_image;
-    private Date write_data;
+    private Date write_date;
     private TextView post_content;
     private Button heartbutton;
     private Button comment_submitbutton;
     private String comment_mycontent;
     private String comment_content;
-    private ImageView content_image_2;
+    private ImageView content_imageview;
     private ListView comment_list;
     CommentListAdapter commentListAdapter;
 
@@ -40,19 +41,22 @@ public class post_item extends AppCompatActivity implements View.OnClickListener
         super.onCreate(savedInstanceState);
         comment_list=(ListView)findViewById(R.id.comment_list);
         commentListAdapter = new CommentListAdapter(post_item.this,comment_listArrayList);
-        //name_textview=(TextView)findViewById(account이름);
         title_textview=(TextView)findViewById(R.id.post_title);
-        content_image_2=(ImageView)findViewById(R.id.post_item_image);
+        content_imageview=(ImageView)findViewById(R.id.post_item_image);
+        date_dateview=(TextView)findViewById(R.id.post_date);
         post_content=(TextView)findViewById(R.id.post_content);
         heartbutton = (Button)findViewById(R.id.heart_button);
         comment_submitbutton=(Button)findViewById(R.id.comment_submit_button);
         heartbutton.setOnClickListener(this);
+        comment_list.setAdapter(commentListAdapter);
+        post_content.setText("post안의 content text 설정");
+        date_dateview.setText("날짜");
+        title_textview.setText(name+"님의"+title);
         comment_listArrayList.add(new comment_item(R.mipmap.ic_launcher,"ㅇㅇ진짜로"));
         comment_listArrayList.add(new comment_item(R.mipmap.ic_launcher,"열심히 안하냐"));
         comment_listArrayList.add(new comment_item(R.mipmap.ic_launcher,"구라아닌거 같은데?"));
         comment_listArrayList.add(new comment_item(R.mipmap.ic_launcher,"에휴 나도 해야하는데 부럽다."));
-        comment_list.setAdapter(commentListAdapter);
-        post_content.setText("post안의 content text 설정");
+
 
 
 
