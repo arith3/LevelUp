@@ -8,13 +8,10 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
-import java.util.ArrayList;
-
 public class MyCommunityActivity extends AppCompatActivity {
 
     private LinearLayout container;
     private int number;
-    private ArrayList<Button> btnarr = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +21,8 @@ public class MyCommunityActivity extends AppCompatActivity {
         //부모 뷰
         container = (LinearLayout) findViewById(R.id.parent);
         LinearLayout.LayoutParams params = new LinearLayout.
-                LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+        params.setMargins(50, 30, 50, 30);
 
         number = 67; //db에서 받아오자
         for(int i = 0; i < number; i++) {
@@ -35,6 +33,7 @@ public class MyCommunityActivity extends AppCompatActivity {
             btn.setId(i + 1);
             btn.setText("DB에서 받았어"+i);
             btn.setLayoutParams(params);
+            btn.setTextSize(30);
 
             final int position = i;
             btn.setOnClickListener(new View.OnClickListener() {
