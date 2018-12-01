@@ -10,20 +10,21 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".SignupActivity" />
         <activity android:name=".CommunityListActivity" />
         <activity android:name=".MyCommunityActivity" />
         <activity android:name=".GetNewCommunityActivity"></activity>
         <activity android:name=".CommunityTabActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity android:name=".DailyActivity">
         </activity>
-        <activity android:name=".MyInfo"/>
+        <activity android:name=".MyInfo">
+      </activity>
     </application>
 
 </manifest>
