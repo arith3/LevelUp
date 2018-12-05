@@ -1,27 +1,27 @@
 {
   "project_info": {
-    "project_number": "1048576292379",
-    "firebase_url": "https://levelup-5066a.firebaseio.com",
-    "project_id": "levelup-5066a",
-    "storage_bucket": "levelup-5066a.appspot.com"
+    "project_number": "562106191204",
+    "firebase_url": "https://levelup-ca0dc.firebaseio.com",
+    "project_id": "levelup-ca0dc",
+    "storage_bucket": "levelup-ca0dc.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1048576292379:android:75b5a3982b127609",
+        "mobilesdk_app_id": "1:562106191204:android:75b5a3982b127609",
         "android_client_info": {
           "package_name": "na.mo.ri.levelup"
-      }
+        }
       },
       "oauth_client": [
         {
-          "client_id": "1048576292379-3rs5iu2flnr107d65bp43pa94544v3f7.apps.googleusercontent.com",
+          "client_id": "562106191204-f6ubchr47eoigvvtoq4ifv9otrmbfrqm.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDfP40pdLlKplMkCsagaGAX-Rd71cLWI5Y"
+          "current_key": "AIzaSyBOPqOOaVBsfaboStEUsWl2Hx9vhqGXzmc"
         }
       ],
       "services": {
