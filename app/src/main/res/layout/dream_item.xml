@@ -7,17 +7,22 @@
         android:orientation="horizontal">
 
         <RadioButton
-            android:id="@+id/radioButton2"
+            android:id="@+id/doCheck"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="날짜적기" />
-
+            android:layout_weight="0.5"
+            />
         <TextView
-            android:id="@+id/textView12"
+            android:id="@+id/getDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="TextView" />
+            android:text="날짜 적기" />
+        <TextView
+            android:id="@+id/getGoal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="목표" />
     </LinearLayout>
 </RelativeLayout>

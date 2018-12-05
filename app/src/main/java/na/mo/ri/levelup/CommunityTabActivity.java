@@ -11,17 +11,21 @@ import java.util.Date;
 
 public class CommunityTabActivity  extends AppCompatActivity {
     ListView listView;
+    ListView rankView;
     MyListAdapter myListAdapter;
+    MyRankAdapter myRankAdapter;
     ArrayList<list_item> list_itemArrayList;
+    ArrayList<rank_item> rank_itemArrayList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_community_tab);
-
-                listView = (ListView)findViewById(R.id.my_listview);
+        listView = (ListView)findViewById(R.id.my_listview);
+        rankView = (ListView) findViewById(R.id.my_rankview);
 
         list_itemArrayList = new ArrayList<list_item>();
+        rank_itemArrayList = new ArrayList<rank_item>();
 
         list_itemArrayList.add(
                 new list_item(R.mipmap.ic_launcher,"보라돌이","제목1",new Date(System.currentTimeMillis()),"내용1"));
@@ -36,6 +40,13 @@ public class CommunityTabActivity  extends AppCompatActivity {
 
         myListAdapter = new MyListAdapter(CommunityTabActivity.this,list_itemArrayList);
         listView.setAdapter(myListAdapter);
+
+       rank_itemArrayList.add(
+               new rank_item("1위", R.mipmap.ic_launcher,80,"80%"));
+
+
+        myRankAdapter= new MyRankAdapter(CommunityTabActivity.this, rank_itemArrayList);
+        rankView.setAdapter(myRankAdapter);
 
         TabHost tabHost1 = (TabHost) findViewById(R.id.tabHost1) ;
         tabHost1.setup() ;

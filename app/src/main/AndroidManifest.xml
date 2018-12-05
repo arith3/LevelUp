@@ -9,23 +9,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ActivitySubmain">
-        </activity>
-        <activity android:name=".MainActivity" >
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
-        </activity>
+        <activity android:name=".ActivitySubmain"/>
+        <activity android:name=".MainActivity"/>
         <activity android:name=".SignupActivity" />
         <activity android:name=".CommunityListActivity" />
         <activity android:name=".MyCommunityActivity" />
-        <activity android:name=".GetNewCommunityActivity"></activity>
-        <activity android:name=".CommunityTabActivity">
+        <activity android:name=".GetNewCommunityActivity"/>
+        <activity android:name=".CommunityTabActivity"/>
+        <activity android:name=".DailyActivity"/>
+        <activity android:name=".MyInfoActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
-        <activity android:name=".DailyActivity">
-        </activity>
-        <activity android:name=".MyInfo"/>
     </application>
-
 </manifest>

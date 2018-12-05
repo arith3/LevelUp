@@ -8,7 +8,7 @@
     android:layout_alignParentTop="true"
     android:layout_margin="30dp"
     android:orientation="vertical"
-    tools:context=".MyInfo">
+    tools:context=".MyInfoActivity">
 
     <LinearLayout
         android:id="@+id/showStatus"
@@ -25,7 +25,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:paddingEnd="30dp"
-            app:srcCompat="@drawable/common_google_signin_btn_icon_dark_focused" />
+            />
 
         <TextView
             android:id="@+id/d_day_textView"
@@ -155,26 +155,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
-
-                    <LinearLayout
+                    <ListView
+                        android:id="@+id/achieveDay_rankview"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="horizontal">
+                        android:layout_height="match_parent" />
 
-                        <RadioButton
-                            android:id="@+id/radioButton"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="날짜적기" />
-
-                        <TextView
-                            android:id="@+id/textView10"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="TextView" />
-                    </LinearLayout>
                 </LinearLayout>
 
                 <!-- 두 번째 페이지. content2 -->
@@ -184,25 +169,10 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <LinearLayout
+                    <ListView
+                        android:id="@+id/achieveWeek_rankview"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="horizontal">
-
-                        <RadioButton
-                            android:id="@+id/radioButton1"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="날짜적기" />
-
-                        <TextView
-                            android:id="@+id/textView11"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="TextView" />
-                    </LinearLayout>
+                        android:layout_height="match_parent" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -211,25 +181,11 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <LinearLayout
+                    <ListView
+                        android:id="@+id/achieveMonth_rankview"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="horizontal">
+                        android:layout_height="match_parent" />
 
-                        <RadioButton
-                            android:id="@+id/radioButton2"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="날짜적기" />
-
-                        <TextView
-                            android:id="@+id/textView12"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="TextView" />
-                    </LinearLayout>
                 </LinearLayout>
                 <!-- 네 번째 페이지. content4 -->
 
