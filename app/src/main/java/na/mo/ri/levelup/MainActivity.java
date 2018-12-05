@@ -39,8 +39,15 @@ public class MainActivity extends AppCompatActivity implements Button.OnClickLis
                 final EditText editPS = findViewById(R.id.editText2);
                 //Toast.makeText(this,editID.getText(), Toast.LENGTH_SHORT).show();
                 //Toast.makeText(this,editPS.getText(), Toast.LENGTH_SHORT).show();
+                String mailad = editID.getText().toString().trim();
+                String passwd = editPS.getText().toString().trim();
 
-                mAuth.signInWithEmailAndPassword(editID.getText().toString(), editPS.getText().toString()).addOnCompleteListener(MainActivity.this, new OnCompleteListener<AuthResult>() {
+                if(mailad.length() < 2 || passwd.length() < 2) {
+                    Toast.makeText(MainActivity.this, "입력 정보를 확인하세요!", Toast.LENGTH_SHORT).show();
+                    break;
+                }
+
+                mAuth.signInWithEmailAndPassword(mailad, passwd).addOnCompleteListener(MainActivity.this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){

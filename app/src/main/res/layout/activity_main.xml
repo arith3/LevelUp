@@ -50,7 +50,7 @@
 
     <Button
         android:id="@+id/SignInBtn"
-        android:layout_width="160sp"
+        android:layout_width="160dp"
         android:layout_height="70sp"
         android:layout_toRightOf="@+id/SignUpBtn"
         android:layout_below="@+id/pw"
