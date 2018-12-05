@@ -1,5 +1,6 @@
 package na.mo.ri.levelup;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -12,6 +13,7 @@ public class MyCommunityActivity extends AppCompatActivity {
 
     private LinearLayout container;
     private int number;
+    private Button addNew;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +25,15 @@ public class MyCommunityActivity extends AppCompatActivity {
         LinearLayout.LayoutParams params = new LinearLayout.
                 LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
         params.setMargins(50, 30, 50, 30);
+
+        addNew = findViewById(R.id.btnadd);
+        addNew.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent iiit = new Intent(MyCommunityActivity.this, CommunityListActivity.class);
+                startActivity(iiit);
+            }
+        });
 
         number = 67; //db에서 받아오자
         for(int i = 0; i < number; i++) {
