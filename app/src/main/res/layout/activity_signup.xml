@@ -95,7 +95,7 @@
         android:layout_centerHorizontal="true"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="ID를 입력하세용" />
+        android:hint="E-mail ID를 입력하세요" />
 
     <EditText
         android:id="@+id/editText2"
@@ -105,6 +105,7 @@
         android:layout_centerVertical="true"
         android:layout_below="@+id/editText"
         android:ems="10"
+        android:hint="6글자 이상으로 설정하세요"
         android:inputType="textPassword" />
 
     <EditText
@@ -114,6 +115,7 @@
         android:layout_alignStart="@+id/editText2"
         android:layout_centerVertical="true"
         android:layout_below="@+id/editText2"
+        android:hint="한번 더 입력하세요"
         android:ems="10"
         android:inputType="textPassword" />
 

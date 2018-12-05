@@ -37,8 +37,8 @@ public class MainActivity extends AppCompatActivity implements Button.OnClickLis
                 //
                 final EditText editID = findViewById(R.id.editText);
                 final EditText editPS = findViewById(R.id.editText2);
-                Toast.makeText(this,editID.getText(), Toast.LENGTH_SHORT).show();
-                Toast.makeText(this,editPS.getText(), Toast.LENGTH_SHORT).show();
+                //Toast.makeText(this,editID.getText(), Toast.LENGTH_SHORT).show();
+                //Toast.makeText(this,editPS.getText(), Toast.LENGTH_SHORT).show();
 
                 mAuth.signInWithEmailAndPassword(editID.getText().toString(), editPS.getText().toString()).addOnCompleteListener(MainActivity.this, new OnCompleteListener<AuthResult>() {
                     @Override
@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity implements Button.OnClickLis
                             Intent it33 = new Intent(MainActivity.this, MyCommunityActivity.class);
                             startActivity(it33);
                         } else {
-                            Toast.makeText(MainActivity.this, "로그인 오류", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(MainActivity.this, "로그인 오류!", Toast.LENGTH_SHORT).show();
                         }
 
                     }

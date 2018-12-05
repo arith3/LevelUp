@@ -50,8 +50,8 @@
 
     <Button
         android:id="@+id/SignInBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="160sp"
+        android:layout_height="70sp"
         android:layout_toRightOf="@+id/SignUpBtn"
         android:layout_below="@+id/pw"
         android:layout_marginTop="40sp"
@@ -72,7 +72,7 @@
         android:layout_centerHorizontal="true"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="" />
+        android:hint="Your E-mail" />
 
     <EditText
         android:id="@+id/editText2"
@@ -82,6 +82,7 @@
         android:layout_centerVertical="true"
         android:layout_below="@+id/editText"
         android:ems="10"
+        android:hint="Your Password"
         android:inputType="textPassword" />
 
     <TextView
