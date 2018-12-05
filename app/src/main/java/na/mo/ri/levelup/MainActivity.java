@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements Button.OnClickListener {
 
@@ -14,13 +15,9 @@ public class MainActivity extends AppCompatActivity implements Button.OnClickLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         //main Login page
-
-        final EditText editID = (EditText) findViewById(R.id.editText);
-        final EditText editPS = (EditText) findViewById(R.id.editText2);
-
-        Button btnSin = (Button) findViewById(R.id.SignInBtn);
+        Button btnSin = findViewById(R.id.SignInBtn);
         btnSin.setOnClickListener(this);
-        Button btnSup = (Button) findViewById(R.id.SignUpBtn);
+        Button btnSup = findViewById(R.id.SignUpBtn);
         btnSup.setOnClickListener(this);
 
     }
@@ -30,6 +27,10 @@ public class MainActivity extends AppCompatActivity implements Button.OnClickLis
         switch (view.getId()) {
             case R.id.SignInBtn:
                 //
+                final EditText editID = findViewById(R.id.editText);
+                final EditText editPS = findViewById(R.id.editText2);
+                Toast.makeText(this,editID.getText(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(this,editPS.getText(), Toast.LENGTH_SHORT).show();
                 break;
             case R.id.SignUpBtn:
                 //
