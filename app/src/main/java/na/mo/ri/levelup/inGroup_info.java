@@ -8,6 +8,9 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 
 public class inGroup_info extends AppCompatActivity {
 
@@ -23,6 +26,9 @@ public class inGroup_info extends AppCompatActivity {
     private TextView ingroup_info_desire1textview;
     private TextView ingroup_info_desire2textview;
     private TextView ingroup_info_desire3textview;
+
+    FirebaseDatabase database=FirebaseDatabase.getInstance();
+    DatabaseReference myRef = database.getReference();
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

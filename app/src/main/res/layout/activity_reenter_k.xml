@@ -61,7 +61,7 @@
         android:layout_marginTop="167dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name" />
+        android:text="다시 한번 목표를 구체화 시켜 적어봅시다!" />
 
 
 </RelativeLayout>

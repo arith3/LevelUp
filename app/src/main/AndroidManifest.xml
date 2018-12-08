@@ -19,7 +19,8 @@
         <activity android:name=".GetNewCommunityActivity" />
         <activity android:name=".CommunityTabActivity" />
         <activity android:name=".DailyActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity" />
+        <activity android:name=".post_item">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
