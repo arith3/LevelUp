@@ -12,7 +12,7 @@ import android.widget.Toast;
 public class MyCommunityActivity extends AppCompatActivity {
 
     private LinearLayout container;
-    private int number;
+    private int number = 3;
     private Button addNew;
 
     @Override
@@ -35,14 +35,30 @@ public class MyCommunityActivity extends AppCompatActivity {
             }
         });
 
-        number = 67; //db에서 받아오자
+        if(GetUserData.com1[0].equals("1"))
+            number--;
+        if(GetUserData.com2[0].equals("1"))
+            number--;
+        if(GetUserData.com3[0].equals("1"))
+            number--;
+
+//        System.out.println("SSIBAL!!!---"+GetUserData.name);
+//        System.out.println("SSIBAL!!!---"+GetUserData.email);
+//        System.out.println("SSIBAL!!!---"+GetUserData.picLink);
+//        System.out.println("SSIBAL!!!---"+GetUserData.com2[2]);
+
         for(int i = 0; i < number; i++) {
 
             // 버튼 생성
             final Button btn = new Button(this);
             // setId 버튼에 대한 키값
             btn.setId(i + 1);
-            btn.setText("DB에서 받았어"+i);
+            if(i == 0) {
+                btn.setText(GetUserData.com1[0]);
+            } else if(i == 1) {
+                btn.setText(GetUserData.com2[0]);
+            } else
+                btn.setText(GetUserData.com3[0]);
             btn.setLayoutParams(params);
             btn.setTextSize(30);
 
