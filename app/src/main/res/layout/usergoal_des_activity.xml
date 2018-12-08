@@ -43,6 +43,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp">
 
+
+
                 <TextView
                     android:id="@+id/content_cirecle_01"
                     android:layout_width="wrap_content"
@@ -58,9 +60,11 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
                     android:layout_toRightOf="@+id/content_cirecle_01"
-                    android:text="생존 욕구를"
+                    android:text="존재 욕구를"
                     android:textColor="#181818"
                     android:textSize="15dp" />
+
+
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -173,6 +177,30 @@
                 android:layout_marginBottom="20dp"
                 android:layout_marginTop="20dp"
                 android:background="#191919" />
+
+            <EditText
+                android:id="@+id/editText8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="38dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="Name" />
+
+            <EditText
+                android:id="@+id/editText13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="7dp"
+                android:layout_marginBottom="0dp"
+
+                android:ems="10"
+                android:inputType="textPassword" />
 
 
         </RelativeLayout>
