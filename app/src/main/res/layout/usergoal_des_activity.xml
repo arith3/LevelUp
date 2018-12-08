@@ -10,17 +10,17 @@
     tools:context=".MainActivity">
 
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="632dp"
         android:layout_margin="20dp">
 
         <TextView
             android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_above="@+id/goal_title"
             android:layout_alignParentStart="true"
             android:layout_margin="15dp"
-            android:layout_above="@+id/goal_title"
             android:text="#당신의 목표는?"
             android:textColor="#181818"
             android:textSize="40dp" />
@@ -29,20 +29,20 @@
         <RelativeLayout
             android:id="@+id/goal_title"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
+            android:layout_height="345dp"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="10dp"
+            android:layout_centerVertical="true"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="15dp"
+            android:layout_marginBottom="10dp"
             android:gravity="center">
 
             <RelativeLayout
                 android:id="@+id/content_view_01"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
                 android:layout_marginTop="10dp">
-
 
 
                 <TextView
@@ -58,18 +58,21 @@
                     android:id="@+id/survival"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="7dp"
+                    android:layout_marginTop="0dp"
                     android:layout_toRightOf="@+id/content_cirecle_01"
                     android:text="존재 욕구를"
                     android:textColor="#181818"
                     android:textSize="15dp" />
 
 
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
+                    android:layout_alignTop="@+id/content_view_01"
+                    android:layout_marginLeft="-1dp"
+                    android:layout_marginTop="0dp"
                     android:layout_toRightOf="@+id/survival"
                     android:text="얼마나 충족"
                     android:textColor="#181818"
@@ -82,8 +85,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:layout_below="@+id/content_view_01"
-                android:layout_marginBottom="20dp"
                 android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
                 android:background="#191919" />
 
 
@@ -129,8 +132,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:layout_below="@+id/content_view_02"
-                android:layout_marginBottom="20dp"
                 android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
                 android:background="#191919" />
 
             <RelativeLayout
@@ -174,8 +177,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:layout_below="@+id/content_view_03"
-                android:layout_marginBottom="20dp"
                 android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
                 android:background="#191919" />
 
             <EditText
@@ -185,22 +188,43 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_marginStart="0dp"
-                android:layout_marginTop="38dp"
+                android:layout_marginTop="16dp"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:text="Name" />
+                android:text="" />
 
             <EditText
-                android:id="@+id/editText13"
-                android:layout_width="wrap_content"
+                android:id="@+id/editText23"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentBottom="true"
-                android:layout_marginStart="7dp"
-                android:layout_marginBottom="0dp"
-
+                android:layout_marginStart="0dp"
+                android:layout_marginBottom="202dp"
                 android:ems="10"
-                android:inputType="textPassword" />
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/editText24"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginBottom="120dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="305dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="14dp"
+                android:layout_marginBottom="42dp"
+                android:text= "※ERG욕구 이론에 근거한 목표설정 단계입니다. \n 예시를보시려면 각각 단계별 욕구를 클릭해 주세요※" />
 
 
         </RelativeLayout>
