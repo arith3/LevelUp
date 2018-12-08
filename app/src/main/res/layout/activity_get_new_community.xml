@@ -15,16 +15,16 @@
         android:layout_marginTop="20dp"
         android:layout_centerHorizontal="true"
         />
+
     <TextView
         android:id="@+id/gazua"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="금연 가즈아~"
-        android:textSize="30dp"
         android:layout_below="@+id/dambae"
         android:layout_centerHorizontal="true"
-        android:textStyle="bold"
-        />
+        android:text="토익뽀사버리기"
+        android:textSize="30dp"
+        android:textStyle="bold" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
