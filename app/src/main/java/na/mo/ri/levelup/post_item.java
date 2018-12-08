@@ -60,7 +60,7 @@ public class post_item extends AppCompatActivity implements View.OnClickListener
                 comment_item temp=new comment_item(1,"temp");
                 temp.setComment_content(dataSnapshot.child("comment").child(Integer.toString(i)).child("content").getValue().toString());
                 temp.setComment_image(Integer.parseInt(dataSnapshot.child("comment").child(Integer.toString(i)).child("content").getValue().toString()));
-
+                comment_listArrayList.add(temp);
                 /*
                 comment_listArrayList.add(new comment_item(
                         dataSnapshot.child("comment").child("comment_img").getValue().toString(),
