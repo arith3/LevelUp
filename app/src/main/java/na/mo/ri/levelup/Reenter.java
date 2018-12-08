@@ -1,5 +1,6 @@
 package na.mo.ri.levelup;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -22,6 +23,7 @@ public class Reenter extends AppCompatActivity implements View.OnClickListener {
     private Button reenter_button;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_reenter_k);
         reentertextview=(EditText) findViewById(R.id.reenter_title);
         reentercontentview=(EditText)findViewById(R.id.reenter_content);
         reenter_button=(Button)findViewById(R.id.reenter_button);
@@ -35,6 +37,10 @@ public class Reenter extends AppCompatActivity implements View.OnClickListener {
                 reenter_title=editText.getText().toString();
                 editText=(EditText)findViewById(R.id.reenter_content);
                 reenter_content=editText.getText().toString();
+                Intent intent = new Intent(
+                        getApplicationContext(), // 현재 화면의 제어권자
+                        inGroup_info.class); // 다음 넘어갈 클래스 지정
+                startActivity(intent);
                 break;
         }
     }

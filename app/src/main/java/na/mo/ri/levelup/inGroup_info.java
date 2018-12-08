@@ -26,6 +26,7 @@ public class inGroup_info extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_ingroup_info);
         ingroup_info_contenttextview=(TextView)findViewById(R.id.ingroup_content);
         ingroup_info_desire1textview=(TextView)findViewById(R.id.ingroup_info_desire1);
         ingroup_info_desire2textview=(TextView)findViewById(R.id.ingroup_info_desire2);

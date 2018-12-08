@@ -18,14 +18,18 @@ import org.w3c.dom.Text;
 public class post_item extends AppCompatActivity implements View.OnClickListener {
 
     ArrayList<comment_item> comment_listArrayList;
+    private int heart_cnt=0;
+    private int comment_cnt=0;
     private String name;
     private TextView name_textview;
     private TextView date_dateview;
     private String title;
     private TextView title_textview;
+    private TextView post_comment_count;
     private int content_image;
     private Date write_date;
     private TextView post_content;
+    private TextView post_heart_count;
     private Button heartbutton;
     private Button comment_submitbutton;
     private String comment_mycontent;
@@ -35,11 +39,12 @@ public class post_item extends AppCompatActivity implements View.OnClickListener
     CommentListAdapter commentListAdapter;
 
 
-    int love=0;
-    int comment=0;
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_post_view);
         comment_list=(ListView)findViewById(R.id.comment_list);
+        post_comment_count=(TextView)findViewById(R.id.post_comment_cnt);
         commentListAdapter = new CommentListAdapter(post_item.this,comment_listArrayList);
         title_textview=(TextView)findViewById(R.id.post_title);
         content_imageview=(ImageView)findViewById(R.id.post_item_image);
@@ -48,6 +53,7 @@ public class post_item extends AppCompatActivity implements View.OnClickListener
         heartbutton = (Button)findViewById(R.id.heart_button);
         comment_submitbutton=(Button)findViewById(R.id.comment_submit_button);
         heartbutton.setOnClickListener(this);
+        post_heart_count=(TextView)findViewById(R.id.post_heart_cnt);
         comment_list.setAdapter(commentListAdapter);
         post_content.setText("post안의 content text 설정");
         date_dateview.setText("날짜");
@@ -56,7 +62,7 @@ public class post_item extends AppCompatActivity implements View.OnClickListener
         comment_listArrayList.add(new comment_item(R.mipmap.ic_launcher,"열심히 안하냐"));
         comment_listArrayList.add(new comment_item(R.mipmap.ic_launcher,"구라아닌거 같은데?"));
         comment_listArrayList.add(new comment_item(R.mipmap.ic_launcher,"에휴 나도 해야하는데 부럽다."));
-
+        comment_cnt=comment_listArrayList.size();
 
 
 
@@ -66,11 +72,15 @@ public class post_item extends AppCompatActivity implements View.OnClickListener
 
         switch (v.getId()){
             case R.id.heart_button :
+                heart_cnt++;
+                post_heart_count.setText(heart_cnt);
                 break;
             case R.id.comment_submit_button :
                 EditText editText = (EditText)findViewById(R.id.comment_mycomment);
                 comment_mycontent=editText.getText().toString();
                 comment_listArrayList.add(new comment_item(R.mipmap.ic_launcher,comment_mycontent));
+                comment_cnt=comment_listArrayList.size();
+                post_comment_count.setText(comment_cnt);
                 break;
         }
     }
