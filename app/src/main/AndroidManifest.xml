@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="na.mo.ri.levelup">
-
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -17,50 +16,29 @@
         <activity android:name=".ActivitySubmain"/>
         <activity android:name=".MyInfoActivity"/>
         <activity android:name=".SignupActivity" />
-        <activity android:name=".CommunityListActivity" />
-        <activity android:name=".MyCommunityActivity" />
+        <activity android:name=".CommunityListActivity"/>
+        <activity android:name=".MyCommunityActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".GetNewCommunityActivity" />
         <activity android:name=".CommunityTabActivity" />
         <activity android:name=".DailyActivity" />
-        <activity android:name=".UserdataActivity" />
+        <activity android:name=".MainActivity" />
         <activity android:name=".post_item"/>
-        <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name="UserdataActivity"/>
         <activity
             android:name=".UserGoalDescriptionActivity"
-            android:screenOrientation="portrait" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>>
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".PeriodActivity"
-            android:screenOrientation="portrait" >
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-
-            <category android:name="android.intent.category.LAUNCHER" />
-
-        </intent-filter>
-        </activity>>
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".UploadPictureActivity"
             android:configChanges="orientation"
-            android:screenOrientation="portrait">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-
+            android:screenOrientation="portrait"/>
         <provider
             android:name="android.support.v4.content.FileProvider"
             android:authorities="${applicationId}.provider"
@@ -70,9 +48,7 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_paths" />
         </provider>
-
         <activity android:name=".SsibalTestActivity"></activity>
         <!--<activity android:name=".SsibalTestActivity"/>-->
     </application>
-
 </manifest>

@@ -14,6 +14,7 @@ public class MyCommunityActivity extends AppCompatActivity {
     private LinearLayout container;
     private int number = 3;
     private Button addNew;
+    private Button Commu_btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +26,16 @@ public class MyCommunityActivity extends AppCompatActivity {
         LinearLayout.LayoutParams params = new LinearLayout.
                 LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
         params.setMargins(50, 30, 50, 30);
+
+        //금연 가즈아 커뮤니티 가는 링크로 수정
+        Commu_btn = findViewById(R.id.Commu_btn);
+        Commu_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent goActi = new Intent(MyCommunityActivity.this, CommunityTabActivity.class);
+                startActivity(goActi);
+            }
+        });
 
         addNew = findViewById(R.id.btnadd);
         addNew.setOnClickListener(new View.OnClickListener() {
