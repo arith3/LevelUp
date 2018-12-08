@@ -46,7 +46,7 @@ public class MyCommunityActivity extends AppCompatActivity {
             }
         });
 
-        number = 67; //db에서 받아오자
+        number = 20; //db에서 받아오자
         for(int i = 0; i < number; i++) {
 
             // 버튼 생성
