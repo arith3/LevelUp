@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity implements Button.OnClickLis
 
     FirebaseAuth mAuth;
     Toolbar myToolbar;
-    private UserData uData;
+    UserData uData;
     ProgressBar pgb;
 
     @Override
@@ -100,21 +100,19 @@ public class MainActivity extends AppCompatActivity implements Button.OnClickLis
                     Toast.makeText(MainActivity.this, "입력 정보를 확인하세요!", Toast.LENGTH_SHORT).show();
                     break;
                 } else {
-                    uData = new UserData(mailad);
-
-                    Handler handler = new Handler();
-                    handler.postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            pgb.setVisibility(View.VISIBLE);
-                        }
-                    }, 1000);
-//                    Intent it33 = new Intent(MainActivity.this, MyCommunityActivity.class);
-//                    startActivity(it33);
-                    mAuth.signInWithEmailAndPassword(mailad, passwd).addOnCompleteListener(MainActivity.this, new OnCompleteListener<AuthResult>() {
+                    mAuth.signInWithEmailAndPassword("na@mo.ri", "namori").addOnCompleteListener(MainActivity.this, new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
+                                uData = new UserData(mailad);
+                                Handler handler = new Handler();
+                                handler.postDelayed(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        pgb.setVisibility(View.VISIBLE);
+                                    }
+                                }, 1000);
+
                                 Intent it33 = new Intent(MainActivity.this, MyCommunityActivity.class);
                                 startActivity(it33);
                             } else {

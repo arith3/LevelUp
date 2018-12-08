@@ -157,14 +157,23 @@ class UserData {
 //        System.out.println("SSICBAL@@@!!!---"+email);
 //        System.out.println("SSICBAL@@@!!!---"+picLink);
 //        System.out.println("SSICBAL@@@!!!---"+com2[2]);
-        GetUserData.name = name;
-        GetUserData.email = email;
-        GetUserData.picLink = picLink;
-
         for(int i = 0; i < 9; i++) {
             GetUserData.com1[i] = com1[i];
             GetUserData.com2[i] = com2[i];
             GetUserData.com3[i] = com3[i];
+        }
+        GetUserData.name = name;
+        GetUserData.email = email;
+        GetUserData.picLink = picLink;
+    }
+
+    boolean checkStatus() {
+        if(com1[0].isEmpty() || com2[0].isEmpty() || com3[0].isEmpty()) {
+            return false;
+        } else if(GetUserData.com1[0].isEmpty() || GetUserData.com2[0].isEmpty() || GetUserData.com3[0].isEmpty()) {
+            return false;
+        } else {
+            return true;
         }
     }
 }

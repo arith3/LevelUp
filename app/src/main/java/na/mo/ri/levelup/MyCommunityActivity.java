@@ -46,17 +46,18 @@ public class MyCommunityActivity extends AppCompatActivity {
             }
         });
 
-        if(GetUserData.com1[0].equals("1"))
-            number--;
-        if(GetUserData.com2[0].equals("1"))
-            number--;
-        if(GetUserData.com3[0].equals("1"))
-            number--;
+//        if(GetUserData.com1[0].equals("1"))
+//            number--;
+//        if(GetUserData.com2[0].equals("1"))
+//            number--;
+//        if(GetUserData.com3[0].equals("1"))
+//            number--;
 
         System.out.println("SSIBAL!!!---"+GetUserData.name);
         System.out.println("SSIBAL!!!---"+GetUserData.email);
         System.out.println("SSIBAL!!!---"+GetUserData.picLink);
         System.out.println("SSIBAL!!!---"+GetUserData.com2[0]);
+        String tnmp;
         //number = 23;
         for(int i = 0; i < number; i++) {
 
@@ -65,12 +66,13 @@ public class MyCommunityActivity extends AppCompatActivity {
             // setId 버튼에 대한 키값
             btn.setId(i + 1);
             if(i == 0) {
-                btn.setText(GetUserData.com1[0]);
+                tnmp = GetUserData.com1[0];
             } else if(i == 1) {
-                btn.setText(GetUserData.com2[0]);
+                tnmp = GetUserData.com2[0];
             } else
-                btn.setText(GetUserData.com3[0]);
+                tnmp = GetUserData.com3[0];
             btn.setLayoutParams(params);
+            btn.setText(tnmp);
             btn.setTextSize(30);
 
             final int position = i;
@@ -81,7 +83,8 @@ public class MyCommunityActivity extends AppCompatActivity {
                 }
 
             });
-            container.addView(btn);
+            if(tnmp.equals("1") || tnmp.equals("0")) {}
+            else {container.addView(btn);}
         }
 
     }
