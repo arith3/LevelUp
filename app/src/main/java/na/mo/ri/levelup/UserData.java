@@ -14,9 +14,9 @@ class UserData {
     private String email;
     private String picLink;
     //private int level;
-    private String[] com1 = new String[6];
-    private String[] com2 = new String[6];
-    private String[] com3 = new String[6];
+    private String[] com1 = new String[9];
+    private String[] com2 = new String[9];
+    private String[] com3 = new String[9];
 
     DatabaseReference mData = FirebaseDatabase.getInstance().getReference().child("user");
 
@@ -31,7 +31,7 @@ class UserData {
                 email = dataSnapshot.child("email").getValue().toString();
                 picLink = dataSnapshot.child("picLink").getValue().toString();
 
-                System.out.println("DATA---------"+dataSnapshot.getChildrenCount());
+                System.out.println("TTEST========"+dataSnapshot.child("cList").getChildrenCount());
 
                 com1[0] = dataSnapshot.child("cList").child("com1").child("name").getValue().toString();
                 com1[1] = dataSnapshot.child("cList").child("com1").child("goal0").getValue().toString();
@@ -39,6 +39,9 @@ class UserData {
                 com1[3] = dataSnapshot.child("cList").child("com1").child("goal2").getValue().toString();
                 com1[4] = dataSnapshot.child("cList").child("com1").child("goal3").getValue().toString();
                 com1[5] = dataSnapshot.child("cList").child("com1").child("goal4").getValue().toString();
+                com1[6] = dataSnapshot.child("cList").child("com1").child("goalD").getValue().toString();
+                com1[7] = dataSnapshot.child("cList").child("com1").child("goalW").getValue().toString();
+                com1[8] = dataSnapshot.child("cList").child("com1").child("goalM").getValue().toString();
 
                 com2[0] = dataSnapshot.child("cList").child("com2").child("name").getValue().toString();
                 com2[1] = dataSnapshot.child("cList").child("com2").child("goal0").getValue().toString();
@@ -46,6 +49,9 @@ class UserData {
                 com2[3] = dataSnapshot.child("cList").child("com2").child("goal2").getValue().toString();
                 com2[4] = dataSnapshot.child("cList").child("com2").child("goal3").getValue().toString();
                 com2[5] = dataSnapshot.child("cList").child("com2").child("goal4").getValue().toString();
+                com2[6] = dataSnapshot.child("cList").child("com2").child("goalD").getValue().toString();
+                com2[7] = dataSnapshot.child("cList").child("com2").child("goalW").getValue().toString();
+                com2[8] = dataSnapshot.child("cList").child("com2").child("goalM").getValue().toString();
 
                 com3[0] = dataSnapshot.child("cList").child("com3").child("name").getValue().toString();
                 com3[1] = dataSnapshot.child("cList").child("com3").child("goal0").getValue().toString();
@@ -53,6 +59,9 @@ class UserData {
                 com3[3] = dataSnapshot.child("cList").child("com3").child("goal2").getValue().toString();
                 com3[4] = dataSnapshot.child("cList").child("com3").child("goal3").getValue().toString();
                 com3[5] = dataSnapshot.child("cList").child("com3").child("goal4").getValue().toString();
+                com3[6] = dataSnapshot.child("cList").child("com3").child("goalD").getValue().toString();
+                com3[7] = dataSnapshot.child("cList").child("com3").child("goalW").getValue().toString();
+                com3[8] = dataSnapshot.child("cList").child("com3").child("goalM").getValue().toString();
 
 //                System.out.println("SSICBAL!!!---"+name);
 //                System.out.println("SSICBAL!!!---"+email);
@@ -81,6 +90,9 @@ class UserData {
         uData.child("cList").child("com1").child("goal2").setValue(com1[3]);
         uData.child("cList").child("com1").child("goal3").setValue(com1[4]);
         uData.child("cList").child("com1").child("goal4").setValue(com1[5]);
+        uData.child("cList").child("com1").child("goalD").setValue(com1[6]);
+        uData.child("cList").child("com1").child("goalW").setValue(com1[7]);
+        uData.child("cList").child("com1").child("goalM").setValue(com1[8]);
 
         uData.child("cList").child("com2").child("name").setValue(com2[0]);
         uData.child("cList").child("com2").child("goal0").setValue(com2[1]);
@@ -88,6 +100,9 @@ class UserData {
         uData.child("cList").child("com2").child("goal2").setValue(com2[3]);
         uData.child("cList").child("com2").child("goal3").setValue(com2[4]);
         uData.child("cList").child("com2").child("goal4").setValue(com2[5]);
+        uData.child("cList").child("com2").child("goalD").setValue(com1[6]);
+        uData.child("cList").child("com2").child("goalW").setValue(com1[7]);
+        uData.child("cList").child("com2").child("goalM").setValue(com1[8]);
 
         uData.child("cList").child("com3").child("name").setValue(com3[0]);
         uData.child("cList").child("com3").child("goal0").setValue(com3[1]);
@@ -95,6 +110,9 @@ class UserData {
         uData.child("cList").child("com3").child("goal2").setValue(com3[3]);
         uData.child("cList").child("com3").child("goal3").setValue(com3[4]);
         uData.child("cList").child("com3").child("goal4").setValue(com3[5]);
+        uData.child("cList").child("com3").child("goalD").setValue(com1[6]);
+        uData.child("cList").child("com3").child("goalW").setValue(com1[7]);
+        uData.child("cList").child("com3").child("goalM").setValue(com1[8]);
     }
 
     public void setUserName(String namae) {
@@ -107,13 +125,19 @@ class UserData {
         email = mail;
     }
     public void setUserCom1(String[] arr) {
-        com1 = arr;
+        for(int i = 0; i < 9; i++) {
+            com1[i] = arr[i];
+        }
     }
     public void setUserCom2(String[] arr) {
-        com2 = arr;
+        for(int i = 0; i < 9; i++) {
+            com2[i] = arr[i];
+        }
     }
     public void setUserCom3(String[] arr) {
-        com3 = arr;
+        for(int i = 0; i < 9; i++) {
+            com3[i] = arr[i];
+        }
     }
     public String getUserName() {
         return name;
@@ -137,7 +161,7 @@ class UserData {
         GetUserData.email = email;
         GetUserData.picLink = picLink;
 
-        for(int i = 0; i < 6; i++) {
+        for(int i = 0; i < 9; i++) {
             GetUserData.com1[i] = com1[i];
             GetUserData.com2[i] = com2[i];
             GetUserData.com3[i] = com3[i];

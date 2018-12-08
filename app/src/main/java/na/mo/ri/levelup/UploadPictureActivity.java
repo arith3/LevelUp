@@ -35,6 +35,9 @@ public class UploadPictureActivity extends AppCompatActivity {
     private TextView mEmptyText;
     private ImageView mPhoto;
     private Uri mCameraUri = null;
+    private UserData ud1;
+    GetUserData gud=new GetUserData();
+
 
 
     @Override
@@ -42,7 +45,6 @@ public class UploadPictureActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.uploadpicture_layout);
         mPeriodMoveButton = (Button) findViewById(R.id.next);
-
         mPeriodContentText = (TextView) findViewById(R.id.goal_content);
         mEmptyText = (TextView) findViewById(R.id.empty_text);
         mPhoto = (ImageView) findViewById(R.id.goal_photo);
@@ -72,6 +74,10 @@ public class UploadPictureActivity extends AppCompatActivity {
     private View.OnClickListener mPeriodEditResultListener = v -> {
         //밑줄 클릭시 팝업창을 열어준다.
         final TwobuttonDialog dialog = new TwobuttonDialog(this);
+        String[] arrGoal=new String[9];
+        gud.email="seojune123";
+
+        ud1=new UserData(gud.email);
         dialog.setDialogContent("나의 목표를 입력 해주세요.");
         dialog.setTwoButtonDialogClickListener(new TwobuttonDialog.DialogClickListener() {
             @Override
@@ -80,6 +86,11 @@ public class UploadPictureActivity extends AppCompatActivity {
                 mEmptyText.setVisibility(View.INVISIBLE);
                 mPeriodContentText.setVisibility(View.VISIBLE);
                 mPeriodContentText.setText(text);
+              //  arrGoal[1]=(String)mPeriodContentText.getText();
+               // ud1.setUserCom1(arrGoal);
+               // ud1.DataUpdate();
+
+
             }
 
             @Override

@@ -53,11 +53,11 @@ public class MyCommunityActivity extends AppCompatActivity {
         if(GetUserData.com3[0].equals("1"))
             number--;
 
-//        System.out.println("SSIBAL!!!---"+GetUserData.name);
-//        System.out.println("SSIBAL!!!---"+GetUserData.email);
-//        System.out.println("SSIBAL!!!---"+GetUserData.picLink);
-//        System.out.println("SSIBAL!!!---"+GetUserData.com2[2]);
-
+        System.out.println("SSIBAL!!!---"+GetUserData.name);
+        System.out.println("SSIBAL!!!---"+GetUserData.email);
+        System.out.println("SSIBAL!!!---"+GetUserData.picLink);
+        System.out.println("SSIBAL!!!---"+GetUserData.com2[2]);
+        //number = 23;
         for(int i = 0; i < number; i++) {
 
             // 버튼 생성

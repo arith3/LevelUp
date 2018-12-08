@@ -224,10 +224,21 @@
                 android:layout_alignParentBottom="true"
                 android:layout_marginStart="14dp"
                 android:layout_marginBottom="42dp"
-                android:text= "※ERG욕구 이론에 근거한 목표설정 단계입니다. \n 예시를보시려면 각각 단계별 욕구를 클릭해 주세요※" />
+                android:text="※ERG욕구 이론에 근거한 목표설정 단계입니다. \n 예시를보시려면 각각 단계별 욕구를 클릭해 주세요※" />
 
 
         </RelativeLayout>
+
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_centerInParent="true"
+            android:layout_marginEnd="128dp"
+            android:layout_marginBottom="106dp"
+            android:text="설정완료" />
 
     </RelativeLayout>
 </FrameLayout>

@@ -20,7 +20,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity implements Button.OnClickListener {
 
-    private FirebaseAuth mAuth;
+    FirebaseAuth mAuth;
     Toolbar myToolbar;
     private UserData uData;
 
@@ -104,7 +104,9 @@ public class MainActivity extends AppCompatActivity implements Button.OnClickLis
                             Intent it33 = new Intent(MainActivity.this, MyCommunityActivity.class);
                             startActivity(it33);
                         } else {
-                            Toast.makeText(MainActivity.this, "로그인 오류!", Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(MainActivity.this, "로그인 오류!", Toast.LENGTH_SHORT).show();
+                            Intent it33 = new Intent(MainActivity.this, MyCommunityActivity.class);
+                            startActivity(it33);
                         }
 
                     }

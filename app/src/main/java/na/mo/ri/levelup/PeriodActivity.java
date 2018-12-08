@@ -42,9 +42,9 @@ public class PeriodActivity extends AppCompatActivity {
         ArrayList<DoWorkEntity> list = new ArrayList<>();
 
         //커버플로우 적용할 Sample dummy 데이터를 넣습니다.
-        list.add(new DoWorkEntity("Cover 1", 0));
-        list.add(new DoWorkEntity("Cover 2", 0));
-        list.add(new DoWorkEntity("Cover 3", 0));
+        list.add(new DoWorkEntity("토익을 하는 사람들의 모임:\n 1. 리딩 chapter2 인증하기  \n 2. 단어 30개 \n 3. 리스닝 Chapter3   ", 1));
+        list.add(new DoWorkEntity("다이어터 ♡ :\n 1. 플랭크 20 SET  \n 2. 런닝 뛰고 30 분 인증 \n 3. 보증금 찾아가기", 1));
+        list.add(new DoWorkEntity("현사모 \n 1. 현주니랑 밥먹기  \n 2. 현주니랑 만화보기 \n 3. 현주니랑 밥먹기 ", 0));
         list.add(new DoWorkEntity("Cover 4", 0));
 
         mCoverFlowCustomAdapter = new CoverFlowCustomAdapter(this);
@@ -54,6 +54,7 @@ public class PeriodActivity extends AppCompatActivity {
         mCoverFlow.setOnItemClickListener((parent, view, position, id) -> {
             //커버플로우 적용된  ex(cover 1 ,cover 2 관련 클릭시 포지션 할당) 클릭 이벤트 처리 여기서 하시면됩니다.
 //            L.e(":::::::: " + list.get(position).getTitleResId());
+
             Intent intent = new Intent(this, UserGoalDescriptionActivity.class);
             startActivity(intent);
             overridePendingTransition(R.anim.activity_forward_enter, R.anim.activity_forward_exit);
