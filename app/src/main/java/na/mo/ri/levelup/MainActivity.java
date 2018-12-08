@@ -101,15 +101,16 @@ public class MainActivity extends AppCompatActivity implements Button.OnClickLis
                     break;
                 } else {
                     uData = new UserData(mailad);
-//                    Intent it33 = new Intent(MainActivity.this, MyCommunityActivity.class);
-//                    startActivity(it33);
+
                     Handler handler = new Handler();
                     handler.postDelayed(new Runnable() {
                         @Override
                         public void run() {
                             pgb.setVisibility(View.VISIBLE);
                         }
-                    }, 100);
+                    }, 1000);
+//                    Intent it33 = new Intent(MainActivity.this, MyCommunityActivity.class);
+//                    startActivity(it33);
                     mAuth.signInWithEmailAndPassword(mailad, passwd).addOnCompleteListener(MainActivity.this, new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {

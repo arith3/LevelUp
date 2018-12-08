@@ -1,5 +1,6 @@
 package na.mo.ri.levelup;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -51,8 +52,9 @@ public class CommunityListActivity extends AppCompatActivity {
             btn.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
                     Log.d("log", "position :" + position);
-                    Toast.makeText(getApplicationContext(), "클릭한 position: " + position, Toast.LENGTH_SHORT).show();
-
+                    //Toast.makeText(getApplicationContext(), "클릭한 position: " + position, Toast.LENGTH_SHORT).show();
+                    Intent iiir = new Intent(CommunityListActivity.this, GetNewCommunityActivity.class);
+                    startActivity(iiir);
                 }
 
             });
