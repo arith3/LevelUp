@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="20dp">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_margin="15dp"
+            android:layout_above="@+id/goal_title"
+            android:text="#당신의 목표는?"
+            android:textColor="#181818"
+            android:textSize="40dp" />
+
+
+        <RelativeLayout
+            android:id="@+id/goal_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:gravity="center">
+
+            <RelativeLayout
+                android:id="@+id/content_view_01"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/content_cirecle_01"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:text="○"
+                    android:textColor="#181818"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/survival"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@+id/content_cirecle_01"
+                    android:text="생존 욕구를"
+                    android:textColor="#181818"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@+id/survival"
+                    android:text="얼마나 충족"
+                    android:textColor="#181818"
+                    android:textSize="15dp" />
+
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/content_view_border_01"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/content_view_01"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="20dp"
+                android:background="#191919" />
+
+
+            <RelativeLayout
+                android:id="@+id/content_view_02"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/content_view_border_01"
+                android:layout_marginTop="20dp">
+
+                <TextView
+                    android:id="@+id/content_cirecle_02"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:text="○"
+                    android:textColor="#181818"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/releation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@+id/content_cirecle_02"
+                    android:text="관계 욕구를"
+                    android:textColor="#181818"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@+id/releation"
+                    android:text="얼마나 충족"
+                    android:textColor="#181818"
+                    android:textSize="15dp" />
+
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/content_view_border_02"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/content_view_02"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="20dp"
+                android:background="#191919" />
+
+            <RelativeLayout
+                android:id="@+id/content_view_03"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/content_view_border_02"
+                android:layout_marginTop="20dp">
+
+                <TextView
+                    android:id="@+id/content_cirecle_03"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:text="○"
+                    android:textColor="#181818"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/growth"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@+id/content_cirecle_03"
+                    android:text="성장 욕구를"
+                    android:textColor="#181818"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@+id/growth"
+                    android:text="얼마나 충족"
+                    android:textColor="#181818"
+                    android:textSize="15dp" />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/content_view_03"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="20dp"
+                android:background="#191919" />
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+</FrameLayout>
