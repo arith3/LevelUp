@@ -1,9 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".GetNewCommunityActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:src="@drawable/dambae"
+        android:id="@+id/dambae"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        />
+    <TextView
+        android:id="@+id/gazua"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="금연 가즈아~"
+        android:textSize="30dp"
+        android:layout_below="@+id/dambae"
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="보증금: 50,000원"
+        android:textSize="20dp"
+        android:id="@+id/money"
+        android:layout_centerHorizontal="true"
+        android:textStyle="italic"
+        android:layout_below="@+id/gazua"
+        />
+    <ImageView
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:src="@drawable/aoba"
+        android:id="@+id/aoba"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="30dp"
+        android:layout_below="@+id/money"
+        />
+    <ImageView
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:src="@drawable/graph"
+        android:id="@+id/grapp"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="30dp"
+        android:layout_below="@+id/money"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/aoba"
+        android:text="현재 8명"
+        android:textSize="22sp"
+        android:layout_marginTop="5dp"
+        android:textStyle="bold"
+        android:layout_marginStart="60dp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/aoba"
+        android:text="72% 진행중"
+        android:textSize="22sp"
+        android:layout_marginTop="5dp"
+        android:textStyle="bold"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="40dp"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="참여하기"
+        android:textSize="30dp"
+        android:id="@+id/butttttttt"
+        android:textStyle="bold"
+        android:layout_above="@+id/gazua"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="5dp"
+        />
+
+</RelativeLayout>
