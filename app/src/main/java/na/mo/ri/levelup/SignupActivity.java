@@ -107,7 +107,7 @@ public class SignupActivity extends AppCompatActivity {
         myData.setUserName("User");
         myData.setUserMail(mel);
         myData.setUserPic("gs://levelup-ca0dc.appspot.com/aoba.png");
-        String[] initArr = {"1","2","3","4","5","6"};
+        String[] initArr = {"1","2","3","4","5","6","1","1","1"};
         myData.setUserCom1(initArr);
         myData.setUserCom2(initArr);
         myData.setUserCom3(initArr);
