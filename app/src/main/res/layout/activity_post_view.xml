@@ -125,7 +125,7 @@
                     android:background="@drawable/yesoryes" />
             </RelativeLayout>
 
-            <RelativeLayout
+            <LinearLayout
 
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -136,11 +136,10 @@
                 android:orientation="horizontal">
 
                 <ListView
-                    android:background="@drawable/border"
                     android:id="@+id/comment_list"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />
-            </RelativeLayout>
+            </LinearLayout>
         </RelativeLayout>
     </LinearLayout>
 </RelativeLayout>

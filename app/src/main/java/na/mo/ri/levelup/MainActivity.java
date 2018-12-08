@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity implements Button.OnClickLis
 
     private FirebaseAuth mAuth;
     Toolbar myToolbar;
+    private UserData uData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

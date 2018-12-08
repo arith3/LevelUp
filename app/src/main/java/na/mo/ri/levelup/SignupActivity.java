@@ -26,6 +26,7 @@ public class SignupActivity extends AppCompatActivity {
     private Button gaip;
     private FirebaseAuth fAuth;
     private boolean phase = false;
+    private UserData myData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,6 +87,7 @@ public class SignupActivity extends AppCompatActivity {
                             }
                         }
                     });
+                    newPeople(line);
                 } else {
                     Toast.makeText(SignupActivity.this, "Check Passwords!", Toast.LENGTH_SHORT).show();
                 }
@@ -98,5 +100,17 @@ public class SignupActivity extends AppCompatActivity {
                 finish();
             }
         });
+    }
+
+    public void newPeople(String mel) {
+        myData = new UserData(mel);
+        myData.setUserName("User");
+        myData.setUserMail(mel);
+        myData.setUserPic("gs://levelup-ca0dc.appspot.com/aoba.png");
+        String[] initArr = {"1","2","3","4","5","6"};
+        myData.setUserCom1(initArr);
+        myData.setUserCom2(initArr);
+        myData.setUserCom3(initArr);
+        myData.DataUpdate();
     }
 }

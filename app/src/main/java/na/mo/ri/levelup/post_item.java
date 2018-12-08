@@ -17,7 +17,7 @@ import org.w3c.dom.Text;
 
 public class post_item extends AppCompatActivity implements View.OnClickListener {
 
-    ArrayList<comment_item> comment_listArrayList;
+    private ArrayList<comment_item> comment_listArrayList;
     private int heart_cnt=0;
     private int comment_cnt=0;
     private String name;
@@ -36,7 +36,7 @@ public class post_item extends AppCompatActivity implements View.OnClickListener
     private String comment_content;
     private ImageView content_imageview;
     private ListView comment_list;
-    CommentListAdapter commentListAdapter;
+    CommentAdapter commentListAdapter;
 
 
 
@@ -45,7 +45,7 @@ public class post_item extends AppCompatActivity implements View.OnClickListener
         setContentView(R.layout.activity_post_view);
         comment_list=(ListView)findViewById(R.id.comment_list);
         post_comment_count=(TextView)findViewById(R.id.post_comment_cnt);
-        commentListAdapter = new CommentListAdapter(post_item.this,comment_listArrayList);
+        commentListAdapter = new CommentAdapter(post_item.this,comment_listArrayList);
         title_textview=(TextView)findViewById(R.id.post_title);
         content_imageview=(ImageView)findViewById(R.id.post_item_image);
         date_dateview=(TextView)findViewById(R.id.post_date);
@@ -54,26 +54,33 @@ public class post_item extends AppCompatActivity implements View.OnClickListener
         comment_submitbutton=(Button)findViewById(R.id.comment_submit_button);
         heartbutton.setOnClickListener(this);
         post_heart_count=(TextView)findViewById(R.id.post_heart_cnt);
-        comment_list.setAdapter(commentListAdapter);
+
         post_content.setText("post안의 content text 설정");
         date_dateview.setText("날짜");
         title_textview.setText(name+"님의"+title);
+        comment_listArrayList = new ArrayList<comment_item>();
+
         comment_listArrayList.add(new comment_item(R.mipmap.ic_launcher,"ㅇㅇ진짜로"));
         comment_listArrayList.add(new comment_item(R.mipmap.ic_launcher,"열심히 안하냐"));
         comment_listArrayList.add(new comment_item(R.mipmap.ic_launcher,"구라아닌거 같은데?"));
         comment_listArrayList.add(new comment_item(R.mipmap.ic_launcher,"에휴 나도 해야하는데 부럽다."));
+        commentListAdapter = new CommentAdapter(post_item.this,comment_listArrayList);
+        comment_list.setAdapter(commentListAdapter);
         comment_cnt=comment_listArrayList.size();
+        post_heart_count.setText(Integer.toString(heart_cnt));
+
 
 
 
 
     }
+
     public void onClick(View v) {
 
         switch (v.getId()){
             case R.id.heart_button :
                 heart_cnt++;
-                post_heart_count.setText(heart_cnt);
+                post_heart_count.setText(Integer.toString(heart_cnt));
                 break;
             case R.id.comment_submit_button :
                 EditText editText = (EditText)findViewById(R.id.comment_mycomment);
@@ -84,6 +91,7 @@ public class post_item extends AppCompatActivity implements View.OnClickListener
                 break;
         }
     }
+
 
 
 

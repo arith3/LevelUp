@@ -14,15 +14,17 @@
         <activity android:name=".SignupActivity" />
         <activity android:name=".CommunityListActivity" />
         <activity android:name=".MyCommunityActivity" />
-        <activity android:name=".GetNewCommunityActivity"/>
-        <activity android:name=".CommunityTabActivity"/>
-        <activity android:name=".DailyActivity"/>
+        <activity android:name=".GetNewCommunityActivity" />
+        <activity android:name=".CommunityTabActivity" />
+        <activity android:name=".DailyActivity" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".post_item"/>
         <activity android:name="UserdataActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity"/>
+        <!--<activity android:name=".SsibalTestActivity"/>-->
     </application>
 </manifest>
