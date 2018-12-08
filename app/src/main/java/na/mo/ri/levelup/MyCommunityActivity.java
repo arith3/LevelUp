@@ -83,7 +83,7 @@ public class MyCommunityActivity extends AppCompatActivity {
                 }
 
             });
-            if(tnmp.equals("1") || tnmp.equals("0")) {}
+            if(tnmp.equals("1")) {}
             else {container.addView(btn);}
         }
 
