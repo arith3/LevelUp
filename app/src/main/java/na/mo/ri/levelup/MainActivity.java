@@ -17,7 +17,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class MainActivity extends AppCompatActivity implements Button.OnClickListener {
 
     private FirebaseAuth mAuth;
-    static UserData uData;
+    private UserData uData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +60,7 @@ public class MainActivity extends AppCompatActivity implements Button.OnClickLis
                     }
                 });
                 uData = new UserData(mailad);
+                uData.statUpdate();
                 break;
             case R.id.SignUpBtn:
                 //

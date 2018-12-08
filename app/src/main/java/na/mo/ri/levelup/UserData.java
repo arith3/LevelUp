@@ -123,4 +123,13 @@ class UserData {
     public String[] getUserCom1() {return this.com1;}
     public String[] getUserCom2() {return this.com2;}
     public String[] getUserCom3() {return this.com3;}
+
+    public void statUpdate() {
+        GetUserData.name = this.name;
+        GetUserData.email = this.email;
+        GetUserData.picLink = this.picLink;
+        GetUserData.com1 = this.com1;
+        GetUserData.com2 = this.com2;
+        GetUserData.com3 = this.com3;
+    }
 }
