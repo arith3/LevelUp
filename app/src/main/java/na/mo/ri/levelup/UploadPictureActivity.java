@@ -53,7 +53,7 @@ public class UploadPictureActivity extends AppCompatActivity {
         mPeriodMoveButton.setOnClickListener(v -> {
             Intent intent = new Intent(this, PeriodActivity.class);
             startActivity(intent);
-            overridePendingTransition(R.anim.activity_forward_enter, R.anim.activity_forward_exit);
+           // overridePendingTransition(R.anim.activity_forward_enter, R.anim.activity_forward_exit);
         });
 
     }
