@@ -2,6 +2,7 @@ package na.mo.ri.levelup;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -11,6 +12,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -23,6 +25,7 @@ public class MainActivity extends AppCompatActivity implements Button.OnClickLis
     FirebaseAuth mAuth;
     Toolbar myToolbar;
     private UserData uData;
+    ProgressBar pgb;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +34,8 @@ public class MainActivity extends AppCompatActivity implements Button.OnClickLis
 
         myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
+
+        pgb = findViewById(R.id.progressBar);
 
         //main Login page
         Button btnSin = findViewById(R.id.SignInBtn);
@@ -94,24 +99,30 @@ public class MainActivity extends AppCompatActivity implements Button.OnClickLis
                 if(mailad.length() < 2 || passwd.length() < 2) {
                     Toast.makeText(MainActivity.this, "입력 정보를 확인하세요!", Toast.LENGTH_SHORT).show();
                     break;
-                }
-                uData = new UserData(mailad);
-
-                mAuth.signInWithEmailAndPassword(mailad, passwd).addOnCompleteListener(MainActivity.this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if(task.isSuccessful()){
-                            Intent it33 = new Intent(MainActivity.this, MyCommunityActivity.class);
-                            startActivity(it33);
-                        } else {
-                            //Toast.makeText(MainActivity.this, "로그인 오류!", Toast.LENGTH_SHORT).show();
-                            Intent it33 = new Intent(MainActivity.this, MyCommunityActivity.class);
-                            startActivity(it33);
+                } else {
+                    uData = new UserData(mailad);
+//                    Intent it33 = new Intent(MainActivity.this, MyCommunityActivity.class);
+//                    startActivity(it33);
+                    Handler handler = new Handler();
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            pgb.setVisibility(View.VISIBLE);
                         }
+                    }, 100);
+                    mAuth.signInWithEmailAndPassword(mailad, passwd).addOnCompleteListener(MainActivity.this, new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (task.isSuccessful()) {
+                                Intent it33 = new Intent(MainActivity.this, MyCommunityActivity.class);
+                                startActivity(it33);
+                            } else {
+                                Toast.makeText(MainActivity.this, "로그인 오류!", Toast.LENGTH_SHORT).show();
 
-                    }
-                });
-
+                            }
+                        }
+                    });
+                }
                 break;
             case R.id.SignUpBtn:
                 //

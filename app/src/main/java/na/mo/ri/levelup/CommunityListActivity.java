@@ -42,7 +42,7 @@ public class CommunityListActivity extends AppCompatActivity {
             final Button btn = new Button(this);
             // setId 버튼에 대한 키값
             btn.setId(i + 1);
-            btn.setText("커뮤니티 No."+i+"\\r\\n"+"이 커뮤니티는 "+i+"하는 곳입니다!");
+            btn.setText("커뮤니티 No."+i+"\n"+"이 커뮤니티는 "+i+"하는 곳입니다!");
 
             btn.setLayoutParams(params);
             btn.setTextSize(15);
