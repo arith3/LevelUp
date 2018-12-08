@@ -31,6 +31,8 @@ class UserData {
                 email = dataSnapshot.child("email").getValue().toString();
                 picLink = dataSnapshot.child("picLink").getValue().toString();
 
+                System.out.println("TTEST========"+dataSnapshot.child("cList").getChildrenCount());
+
                 com1[0] = dataSnapshot.child("cList").child("com1").child("name").getValue().toString();
                 com1[1] = dataSnapshot.child("cList").child("com1").child("goal0").getValue().toString();
                 com1[2] = dataSnapshot.child("cList").child("com1").child("goal1").getValue().toString();

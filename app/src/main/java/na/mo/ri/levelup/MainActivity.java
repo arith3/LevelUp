@@ -20,7 +20,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity implements Button.OnClickListener {
 
-    private FirebaseAuth mAuth;
+    FirebaseAuth mAuth;
     Toolbar myToolbar;
     private UserData uData;
 
