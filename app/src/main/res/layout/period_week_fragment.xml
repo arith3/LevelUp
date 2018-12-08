@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:layout_centerVertical="true"
+        android:layout_margin="20dp"
+        android:background="@drawable/content_all_border_line"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/goal_content_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:text="나는 한주에"
+            android:textColor="#181818"
+            android:textSize="35dp" />
+
+
+        <TextView
+            android:id="@+id/empty_text"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/goal_content_text"
+            android:background="@drawable/content_bottom_line"
+            android:text=" "
+            android:textColor="#181818"
+            android:textSize="35dp" />
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/goal_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/goal_content_text"
+            android:background="@drawable/content_bottom_line"
+            android:text=" "
+            android:textColor="#181818"
+            android:textSize="35dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/goal_content_text"
+            android:text="는 꼭 하겠습니다."
+            android:textColor="#181818"
+            android:textSize="35dp" />
+
+    </RelativeLayout>
+
+</RelativeLayout>
