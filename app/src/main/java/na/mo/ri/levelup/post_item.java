@@ -49,7 +49,7 @@ public class post_item extends AppCompatActivity implements View.OnClickListener
     CommentAdapter commentListAdapter;
     FirebaseDatabase database=FirebaseDatabase.getInstance();
     DatabaseReference myRef = database.getReference().child("community").child(groupname).child("post");
-    DatabaseReference postRef=myRef.child("test");//"test는 글제목
+    DatabaseReference postRef=myRef.child("test");//"test는 글제목dlfknrnskd
     ValueEventListener postListener = new ValueEventListener() {
         @Override
 
