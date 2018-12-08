@@ -137,7 +137,7 @@ public class post_item extends AppCompatActivity implements View.OnClickListener
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.heart_button:
-                heart_cnt++;
+                heart_cnt++;//ddddd
                 System.out.println("$$$");
                 post_heart_count.setText(Integer.toString(heart_cnt));
                 postRef.child("heart_count").setValue(Integer.toString(heart_cnt));
