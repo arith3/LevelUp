@@ -20,7 +20,7 @@ class UserData {
     DatabaseReference mData = FirebaseDatabase.getInstance().getReference().child("user");
 
     public UserData(String eMail) {
-        eMail = eMail.replaceAll(".", "!");
+        eMail = eMail.replace(".", "!");
         DatabaseReference mUser = mData.child(eMail);
 
         mUser.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -66,7 +66,7 @@ class UserData {
     }
 
     public void DataUpdate() {
-        DatabaseReference uData = mData.child(this.email.replaceAll(".","!"));
+        DatabaseReference uData = mData.child(this.email.replace(".","!"));
         uData.child("name").setValue(this.name);
         uData.child("email").setValue(this.email);
         uData.child("picLink").setValue(this.picLink);
