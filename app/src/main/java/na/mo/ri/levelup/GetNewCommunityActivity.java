@@ -21,9 +21,9 @@ public class GetNewCommunityActivity extends AppCompatActivity {
         inside.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getApplicationContext(), "참여하시려면 한번 더 버튼을 누르세요!", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "참여하시려면 한번 더 버튼을 누르세요!", Toast.LENGTH_SHORT).show();
                 status++;
-                if(status > 0) {
+                if(status > 1) {
                     Intent iiiit = new Intent(GetNewCommunityActivity.this, UploadPictureActivity.class);
                     startActivity(iiiit);
                 }
