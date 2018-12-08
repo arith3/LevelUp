@@ -23,21 +23,24 @@ import com.google.firebase.database.ValueEventListener;
 
 import org.w3c.dom.Text;
 
+import static java.lang.Math.toIntExact;
+
 
 public class post_item extends AppCompatActivity implements View.OnClickListener {
 
     private ArrayList<comment_item> comment_listArrayList;
     private String groupname;
     private int heart_cnt=0;
-    private int comment_cnt=0;
+    private int comment_cnt=1;
+    private String title;
+    private int icon=0; // 글쓴이 아이콘 ( 글에 저장되어있음)
     private String name;
     private TextView name_textview;
     private TextView date_dateview;
-    private String title;
     private TextView title_textview;
     private TextView post_comment_count;
-    private int content_image;
-    private Date write_date;
+    private int content_image;// 글의 이미지
+    private String date;
     private TextView post_content;
     private TextView post_heart_count;
     private Button heartbutton;
@@ -47,19 +50,30 @@ public class post_item extends AppCompatActivity implements View.OnClickListener
     private ImageView content_imageview;
     private ListView comment_list;
     CommentAdapter commentListAdapter;
-    FirebaseDatabase database=FirebaseDatabase.getInstance();
-    DatabaseReference myRef = database.getReference().child("community").child(groupname).child("post");
-    DatabaseReference postRef=myRef.child("test");//"test는 글제목dlfknrnskd
+
+    DatabaseReference postRef = FirebaseDatabase.getInstance().getReference().child("community").child("1").child("post").child("1");
+    DatabaseReference myRef = FirebaseDatabase.getInstance().getReference().child("community").child("1").child("post").child("1");
+    //DatabaseReference postRef=myRef.child("1");//"test는 글제목dlfknrnskd
     ValueEventListener postListener = new ValueEventListener() {
         @Override
 
         public void onDataChange(DataSnapshot dataSnapshot) {
-            // Get Post object and use the values to update the UI
-            comment_cnt=(int)dataSnapshot.child("comment").getChildrenCount();
-            for(int i=0;i<comment_cnt;i++){
+            // Get Post object and use the values to update the U
+            //System.out.println(dataSnapshot.child("comment").child("1").child("comment_content").getValue());
+            date=(String)dataSnapshot.child("date").getValue();
+            comment_cnt=toIntExact(dataSnapshot.child("comment").getChildrenCount());
+            icon=Integer.parseInt((String)dataSnapshot.child("icon").getValue());
+            title_textview.setText((String)dataSnapshot.child("title").getValue());
+            name=(String)dataSnapshot.child("name").getValue();
+            date_dateview.setText(date);
+            heart_cnt=Integer.parseInt((String)dataSnapshot.child("heart_count").getValue());
+            post_content.setText((String)dataSnapshot.child("content").getValue());
+
+
+            for(int i=1;i<=comment_cnt;i++){
                 comment_item temp=new comment_item(1,"temp");
-                temp.setComment_content(dataSnapshot.child("comment").child(Integer.toString(i)).child("content").getValue().toString());
-                temp.setComment_image(Integer.parseInt(dataSnapshot.child("comment").child(Integer.toString(i)).child("content").getValue().toString()));
+                temp.setComment_content((String)dataSnapshot.child("comment").child(Integer.toString(i)).child("comment_content").getValue());
+                temp.setComment_image(Integer.parseInt((String)dataSnapshot.child("comment").child(Integer.toString(i)).child("comment_img").getValue()));
                 comment_listArrayList.add(temp);
                 /*
                 comment_listArrayList.add(new comment_item(
@@ -83,6 +97,9 @@ public class post_item extends AppCompatActivity implements View.OnClickListener
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_post_view);
+        //postRef.child("comment").child("3").push().setValue(new comment_item(R.mipmap.ic_launcher, "fdsfa@navet.com", "dddddddd"));
+        name="fdsa";
+        icon=0;
         postRef.addListenerForSingleValueEvent(postListener);
         groupname="Testgroup";
         comment_list=(ListView)findViewById(R.id.comment_list);
@@ -99,7 +116,6 @@ public class post_item extends AppCompatActivity implements View.OnClickListener
         post_heart_count=(TextView)findViewById(R.id.post_heart_cnt);
         post_content.setText("post안의 content text 설정");
         date_dateview.setText("날짜");
-        title_textview.setText(name+"님의"+title);
         comment_listArrayList = new ArrayList<comment_item>();
 
       /*  comment_listArrayList.add(new comment_item(R.mipmap.ic_launcher,"ㅇㅇ진짜로"));
@@ -121,16 +137,19 @@ public class post_item extends AppCompatActivity implements View.OnClickListener
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.heart_button:
-                heart_cnt++;
+                heart_cnt++;//ddddd
                 System.out.println("$$$");
                 post_heart_count.setText(Integer.toString(heart_cnt));
+                postRef.child("heart_count").setValue(Integer.toString(heart_cnt));
                 //myRef.child("community").child(groupname).child("post").get
                 break;
             case R.id.comment_submit_button:
                 EditText editText = (EditText)findViewById(R.id.comment_mycomment);
                 System.out.println("ok");
                 comment_mycontent = editText.getText().toString();
-
+                comment_cnt++;
+                postRef.child("comment").child(Integer.toString(comment_cnt)).push().setValue(comment_mycontent);//이부분 에서는 댓글쓴이의 아이콘 입력
+                postRef.child("comment").child(Integer.toString(comment_cnt)).push().setValue(GetUserData.picLink);
                 /*
                 comment_listArrayList.add(new comment_item(R.mipmap.ic_launcher,comment_mycontent));
                 comment_cnt=comment_listArrayList.size();
