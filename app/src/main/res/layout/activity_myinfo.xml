@@ -19,7 +19,7 @@
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/showStatus"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -27,25 +27,33 @@
         android:layout_alignParentTop="true"
         android:layout_marginBottom="10dp"
         android:orientation="horizontal"
-        android:paddingTop="120dp">
+        android:paddingTop="120dp"
+        android:background="@drawable/border">
 
         <ImageView
             android:id="@+id/profile_imageView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:paddingEnd="30dp" />
+            android:paddingEnd="30dp"
+            android:layout_alignParentLeft="true"/>
 
         <TextView
             android:id="@+id/d_day_textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
             android:layout_weight="1"
-            android:text="D+128일 째" />
+            android:gravity="center"
+            android:text="D+128일 째"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:layout_alignParentRight="true"
+            android:layout_toRightOf="@+id/profile_imageView"/>
 
 
-    </LinearLayout>
+    </RelativeLayout>
 
     <TabHost
         android:id="@+id/tabHost1"
@@ -54,12 +62,12 @@
         android:layout_below="@id/showStatus"
         android:layout_alignParentStart="true"
         android:layout_marginStart="0dp"
-        android:layout_marginTop="0dp">
+        android:layout_marginTop="0dp"
+        >
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-
             android:layout_below="@id/myLank_textView"
             android:orientation="vertical">
 
@@ -69,7 +77,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp" />
+                android:layout_marginBottom="5dp"
+                android:textSize="30sp"
+                android:background="@color/colorPrimary"/>
 
             <!-- FrameLayout의 id값이 반드시 "tabcontent"로 지정되어야 함. -->
             <FrameLayout
@@ -90,7 +100,10 @@
                         android:id="@+id/textView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="day" />
+                        android:text="day"
+                        android:textSize="20sp"
+                        android:background="@drawable/border"
+                        />
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -105,7 +118,8 @@
                             android:layout_height="wrap_content"
                             android:layout_alignParentLeft="true"
                             android:layout_weight="1"
-                            android:text="오늘" />
+                            android:text="오늘"
+                            android:textSize="15sp"/>
 
                         <TextView
                             android:id="@+id/yesterdayText"
@@ -113,7 +127,8 @@
                             android:layout_height="wrap_content"
                             android:layout_alignParentRight="true"
                             android:layout_weight="1"
-                            android:text="어제" />
+                            android:text="어제"
+                            android:textSize="15sp"/>
 
                         <TextView
                             android:id="@+id/todayStatus"
@@ -122,7 +137,8 @@
                             android:layout_below="@+id/todayText"
                             android:layout_alignParentLeft="true"
                             android:layout_weight="1"
-                            android:text="success" />
+                            android:text="success"
+                            android:textSize="20sp"/>
 
                         <TextView
                             android:id="@+id/yesterdayStatus"
@@ -131,7 +147,8 @@
                             android:layout_below="@+id/yesterdayText"
                             android:layout_alignParentRight="true"
                             android:layout_weight="1"
-                            android:text="fail" />
+                            android:text="fail"
+                            android:textSize="20sp"/>
 
                     </RelativeLayout>
 
@@ -139,7 +156,9 @@
                         android:id="@+id/textView2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="week" />
+                        android:text="week"
+                        android:textSize="20sp"
+                        android:background="@drawable/border"/>
 
                 </LinearLayout>
 
