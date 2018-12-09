@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity implements Button.OnClickLis
     Toolbar myToolbar;
     UserData uData;
     ProgressBar pgb;
+    Button btnSin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +39,7 @@ public class MainActivity extends AppCompatActivity implements Button.OnClickLis
         pgb = findViewById(R.id.progressBar);
 
         //main Login page
-        Button btnSin = findViewById(R.id.SignInBtn);
+        btnSin = findViewById(R.id.SignInBtn);
         btnSin.setOnClickListener(this);
         Button btnSup = findViewById(R.id.SignUpBtn);
         btnSup.setOnClickListener(this);
@@ -88,19 +89,20 @@ public class MainActivity extends AppCompatActivity implements Button.OnClickLis
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.SignInBtn:
-                //
+                pgb.setVisibility(ProgressBar.VISIBLE);
+                btnSin.setText("로그인중..");
                 final EditText editID = findViewById(R.id.editText);
                 final EditText editPS = findViewById(R.id.editText2);
                 //Toast.makeText(this,editID.getText(), Toast.LENGTH_SHORT).show();
                 //Toast.makeText(this,editPS.getText(), Toast.LENGTH_SHORT).show();
-                String mailad = editID.getText().toString().trim();
-                String passwd = editPS.getText().toString().trim();
-
+                //String mailad = editID.getText().toString().trim();
+                //String passwd = editPS.getText().toString().trim();
+                String mailad = "na@mo.ri";
+                String passwd = "namori";
                 if(mailad.length() < 2 || passwd.length() < 2) {
                     Toast.makeText(MainActivity.this, "입력 정보를 확인하세요!", Toast.LENGTH_SHORT).show();
                     break;
                 } else {
-                    pgb.setVisibility(View.VISIBLE);
                     mAuth.signInWithEmailAndPassword(mailad, passwd).addOnCompleteListener(MainActivity.this, new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
@@ -116,6 +118,7 @@ public class MainActivity extends AppCompatActivity implements Button.OnClickLis
 
                                 Intent it33 = new Intent(MainActivity.this, MyCommunityActivity.class);
                                 startActivity(it33);
+                                finish();
                             } else {
                                 Toast.makeText(MainActivity.this, "로그인 오류!", Toast.LENGTH_SHORT).show();
 
@@ -123,6 +126,7 @@ public class MainActivity extends AppCompatActivity implements Button.OnClickLis
                         }
                     });
                 }
+
                 break;
             case R.id.SignUpBtn:
                 //
