@@ -182,7 +182,7 @@
                             android:layout_height="wrap_content"
                             android:ems="10"
                             android:inputType="textPersonName"
-                            android:text="간단한 인증 내용 쓰세요"
+                            android:hint="간단한 인증 내용 쓰세요"
                             android:textSize="15sp"
                             />
 

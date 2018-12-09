@@ -25,12 +25,12 @@
             />
         <Button
             android:layout_width="match_parent"
-            android:layout_height="80sp"
+            android:layout_height="wrap_content"
             android:id="@+id/Commu_btn"
             android:layout_margin="30sp"
-            android:background="#d2e42d"
+
             android:text="금연 가즈아"
-            android:textSize="44sp"
+            android:textSize="30sp"
             android:textStyle="bold"
             />
     </LinearLayout>
