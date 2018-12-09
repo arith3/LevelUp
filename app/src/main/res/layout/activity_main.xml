@@ -16,13 +16,12 @@
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/image"
-        android:src="@drawable/ssibal"
+        android:layout_width="216dp"
+        android:layout_height="175dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="60dp"
-        />
+        android:src="@drawable/ssibal" />
 
     <TextView
         android:id="@+id/name"
