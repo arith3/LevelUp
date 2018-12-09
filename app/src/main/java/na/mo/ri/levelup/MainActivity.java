@@ -3,7 +3,6 @@ package na.mo.ri.levelup;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -15,9 +14,6 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity implements Button.OnClickListener {
@@ -90,6 +86,7 @@ public class MainActivity extends AppCompatActivity implements Button.OnClickLis
         switch (view.getId()) {
             case R.id.SignInBtn:
                 pgb.setVisibility(ProgressBar.VISIBLE);
+                pgb.setIndeterminate(true);
                 btnSin.setText("로그인중..");
                 final EditText editID = findViewById(R.id.editText);
                 final EditText editPS = findViewById(R.id.editText2);
@@ -103,12 +100,10 @@ public class MainActivity extends AppCompatActivity implements Button.OnClickLis
                     Toast.makeText(MainActivity.this, "입력 정보를 확인하세요!", Toast.LENGTH_SHORT).show();
                     break;
                 } else {
-                    mAuth.signInWithEmailAndPassword(mailad, passwd).addOnCompleteListener(MainActivity.this, new OnCompleteListener<AuthResult>() {
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
-                            if (task.isSuccessful()) {
-                                uData = new UserData(mailad);
-                                Handler handler = new Handler();
+                    mAuth.signInWithEmailAndPassword(mailad, passwd).addOnCompleteListener(MainActivity.this, task -> {
+                        if (task.isSuccessful()) {
+                            uData = new UserData(mailad);
+                            Handler handler = new Handler();
 //                                handler.postDelayed(new Runnable() {
 //                                    @Override
 //                                    public void run() {
@@ -116,13 +111,12 @@ public class MainActivity extends AppCompatActivity implements Button.OnClickLis
 //                                    }
 //                                }, 1000);
 
-                                Intent it33 = new Intent(MainActivity.this, MyCommunityActivity.class);
-                                startActivity(it33);
-                                finish();
-                            } else {
-                                Toast.makeText(MainActivity.this, "로그인 오류!", Toast.LENGTH_SHORT).show();
+                            Intent it33 = new Intent(MainActivity.this, MyCommunityActivity.class);
+                            startActivity(it33);
+                            btnSin.setText("로그인");
+                        } else {
+                            Toast.makeText(MainActivity.this, "로그인 오류!", Toast.LENGTH_SHORT).show();
 
-                            }
                         }
                     });
                 }
