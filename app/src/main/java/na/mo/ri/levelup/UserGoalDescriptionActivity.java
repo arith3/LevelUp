@@ -27,7 +27,7 @@ public class UserGoalDescriptionActivity extends AppCompatActivity {
         mGrowth = (TextView) findViewById(R.id.growth);
 
         btn1.setOnClickListener(v -> {
-            Intent intent = new Intent(this, Reenter.class);
+            Intent intent = new Intent(UserGoalDescriptionActivity.this, Reenter.class);
             startActivity(intent);
             // overridePendingTransition(R.anim.activity_forward_enter, R.anim.activity_forward_exit);
         });

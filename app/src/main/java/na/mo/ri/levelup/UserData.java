@@ -14,9 +14,9 @@ class UserData {
     private String email;
     private String picLink;
     //private int level;
-    private String[] com1 = new String[9];
-    private String[] com2 = new String[9];
-    private String[] com3 = new String[9];
+    private String[] com1 = {"1","1","1","1","1","1","1","1","1"};
+    private String[] com2 = {"1","1","1","1","1","1","1","1","1"};
+    private String[] com3 = {"1","1","1","1","1","1","1","1","1"};
 
     DatabaseReference mData = FirebaseDatabase.getInstance().getReference().child("user");
 

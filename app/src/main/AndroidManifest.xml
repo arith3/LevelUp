@@ -29,6 +29,8 @@
         <activity android:name=".MyCommunityActivity" />
         <activity android:name=".post_item"/>
         <activity android:name="UserdataActivity"/>
+        <activity android:name=".Reenter"/>
+        <activity android:name=".inGroup_info"/>
         <activity
             android:name=".UserGoalDescriptionActivity"
             android:screenOrientation="portrait"/>
