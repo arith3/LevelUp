@@ -49,7 +49,13 @@ public class UploadPictureActivity extends AppCompatActivity {
         mEmptyText.setOnClickListener(mPeriodEditResultListener);
         mPeriodContentText.setOnClickListener(mPeriodEditResultListener);
         mPhoto.setOnClickListener(mPohtoListener);
-        ud1 = new UserData("na@mo.ri");
+        String tetemp;
+        if(GetUserData.email == null) {
+            tetemp = "na@mo.ri";
+        } else {
+            tetemp = GetUserData.email;
+        }
+        ud1 = new UserData(tetemp);
         mPeriodMoveButton.setOnClickListener(v -> {
             ud1.easyComSet(ssiba);
             Intent intent = new Intent(UploadPictureActivity.this, PeriodActivity.class);
