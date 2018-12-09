@@ -90,6 +90,7 @@
         android:layout_centerVertical="true"
         android:layout_below="@+id/editText"
         android:ems="10"
+        android:layout_centerHorizontal="true"
         android:hint="Your Password"
         android:inputType="textPassword" />
 
