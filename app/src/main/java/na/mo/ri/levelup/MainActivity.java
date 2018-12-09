@@ -100,6 +100,7 @@ public class MainActivity extends AppCompatActivity implements Button.OnClickLis
                     Toast.makeText(MainActivity.this, "입력 정보를 확인하세요!", Toast.LENGTH_SHORT).show();
                     break;
                 } else {
+                    pgb.setVisibility(View.VISIBLE);
                     mAuth.signInWithEmailAndPassword(mailad, passwd).addOnCompleteListener(MainActivity.this, new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
