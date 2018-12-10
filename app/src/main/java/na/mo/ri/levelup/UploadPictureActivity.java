@@ -49,7 +49,7 @@ public class UploadPictureActivity extends AppCompatActivity {
         mPhoto.setOnClickListener(mPohtoListener);
 
         mPeriodMoveButton.setOnClickListener(v -> {
-            Suzukaze.Aoba[0] = GetUserData.inView_Group;
+            Suzukaze.Aoba[0] = Suzukaze.groupNum;
             Intent intent = new Intent(UploadPictureActivity.this, PeriodActivity.class);
             startActivity(intent);
            // overridePendingTransition(R.anim.activity_forward_enter, R.anim.activity_forward_exit);

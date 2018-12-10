@@ -66,9 +66,9 @@ public class CommunityListActivity extends AppCompatActivity {
                         public void onClick(View v) {
                             Log.d("log", "position :" + position);
                             GetUserData.inView_Group = Integer.toString(position+1);
-
                             GetUserData.nownum = kotkoro[position];
-                            Suzukaze.groupNum = Integer.toString(position);
+                            //Suzukaze.groupNum = Integer.toString(position);
+                            Suzukaze.groupNum = whatislove[position];
                             //Toast.makeText(getApplicationContext(), "클릭한 position: " + position, Toast.LENGTH_SHORT).show();
                             Intent iiir = new Intent(CommunityListActivity.this, GetNewCommunityActivity.class);
                             startActivity(iiir);

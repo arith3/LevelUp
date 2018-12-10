@@ -66,7 +66,7 @@ public class inGroup_info extends AppCompatActivity {
             public void onClick(View v) {
                 //Toast.makeText(getApplicationContext(), "onClick!", Toast.LENGTH_SHORT).show();
                 if(udt.easyComSet(Suzukaze.Aoba)) {
-                    udt.hitoCountInc(Suzukaze.groupNum);
+                    udt.hitoCountInc(GetUserData.inView_Group);
                     Toast.makeText(getApplicationContext(), Suzukaze.Aoba[0]+" 커뮤니티 가입 완료!", Toast.LENGTH_SHORT).show();
                     Intent backToTheFuture = new Intent(getApplicationContext(), MyCommunityActivity.class);
                     startActivity(backToTheFuture);

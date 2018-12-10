@@ -184,7 +184,8 @@ class UserData {
     }
 
     void hitoCountInc(String group) {
-        mData.child("community").child(group).setValue(GetUserData.nownum + 1);
+        int logi = Integer.parseInt(GetUserData.nownum);
+        mData.child("community").child(group).child("ppl_count").setValue(Integer.toString(logi + 1));
     }
 
     boolean easyComSet(String[] arr) {

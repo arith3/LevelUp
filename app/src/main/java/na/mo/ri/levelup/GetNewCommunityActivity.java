@@ -23,7 +23,7 @@ public class GetNewCommunityActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_get_new_community);
         titleM = findViewById(R.id.gazua);
-        titleM.setText(GetUserData.inView_Group + " 커뮤니티");
+        titleM.setText(Suzukaze.groupNum+ " 커뮤니티");
         nowPeo = findViewById(R.id.nowPeople);
         nowPeo.setText(GetUserData.nownum+"명 참여중");
         nowPer = findViewById(R.id.nowPercent);
