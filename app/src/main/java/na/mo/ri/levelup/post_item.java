@@ -90,10 +90,7 @@ public class post_item extends AppCompatActivity implements View.OnClickListener
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_post_view);
-        name="fdsa";
-        icon=0;
         postRef.addListenerForSingleValueEvent(postListener);
-        groupname="Testgroup";
         comment_list=(ListView)findViewById(R.id.comment_list);
         post_comment_count=(TextView)findViewById(R.id.post_comment_cnt);
         commentListAdapter = new CommentAdapter(post_item.this,comment_listArrayList);
@@ -136,6 +133,8 @@ public class post_item extends AppCompatActivity implements View.OnClickListener
                 comment_cnt++;
                 postRef.child("comment").child(Integer.toString(comment_cnt)).child("comment_content").setValue(comment_mycontent);//이부분 에서는 댓글쓴이의 아이콘 입력
                 postRef.child("comment").child(Integer.toString(comment_cnt)).child("comment_img").setValue("2131558400");
+                comment_item temp=new comment_item(2131558400,comment_mycontent);
+                comment_listArrayList.add(temp);
                 break;
         }
     }
