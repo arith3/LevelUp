@@ -28,6 +28,7 @@ import static java.lang.Math.toIntExact;
 
 public class post_item extends AppCompatActivity implements View.OnClickListener {
 
+
     private ArrayList<comment_item> comment_listArrayList;
     private String groupname;
     private int heart_cnt=0;
@@ -53,13 +54,11 @@ public class post_item extends AppCompatActivity implements View.OnClickListener
 
     DatabaseReference postRef = FirebaseDatabase.getInstance().getReference().child("community").child("1").child("post").child("1");
     DatabaseReference myRef = FirebaseDatabase.getInstance().getReference().child("community").child("1").child("post").child("1");
-    //DatabaseReference postRef=myRef.child("1");//"test는 글제목dlfknrnskd
     ValueEventListener postListener = new ValueEventListener() {
         @Override
 
         public void onDataChange(DataSnapshot dataSnapshot) {
             // Get Post object and use the values to update the U
-            //System.out.println(dataSnapshot.child("comment").child("1").child("comment_content").getValue());
             date=(String)dataSnapshot.child("date").getValue();
             comment_cnt=toIntExact(dataSnapshot.child("comment").getChildrenCount());
             icon=Integer.parseInt((String)dataSnapshot.child("icon").getValue());
@@ -75,12 +74,6 @@ public class post_item extends AppCompatActivity implements View.OnClickListener
                 temp.setComment_content((String)dataSnapshot.child("comment").child(Integer.toString(i)).child("comment_content").getValue());
                 temp.setComment_image(Integer.parseInt((String)dataSnapshot.child("comment").child(Integer.toString(i)).child("comment_img").getValue()));
                 comment_listArrayList.add(temp);
-                /*
-                comment_listArrayList.add(new comment_item(
-                        dataSnapshot.child("comment").child("comment_img").getValue().toString(),
-                        dataSnapshot.child("comment").child("comment_context").getValue().toString(),
-                        dataSnapshot.child("comment").child("comment_id").getValue().));
-                        */
             }
 
             // ...
@@ -97,7 +90,6 @@ public class post_item extends AppCompatActivity implements View.OnClickListener
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_post_view);
-        //postRef.child("comment").child("3").push().setValue(new comment_item(R.mipmap.ic_launcher, "fdsfa@navet.com", "dddddddd"));
         name="fdsa";
         icon=0;
         postRef.addListenerForSingleValueEvent(postListener);
@@ -118,11 +110,6 @@ public class post_item extends AppCompatActivity implements View.OnClickListener
         date_dateview.setText("날짜");
         comment_listArrayList = new ArrayList<comment_item>();
 
-      /*  comment_listArrayList.add(new comment_item(R.mipmap.ic_launcher,"ㅇㅇ진짜로"));
-        comment_listArrayList.add(new comment_item(R.mipmap.ic_launcher,"열심히 안하냐"));
-        comment_listArrayList.add(new comment_item(R.mipmap.ic_launcher,"구라아닌거 같은데?"));
-        comment_listArrayList.add(new comment_item(R.mipmap.ic_launcher,"에휴 나도 해야하는데 부럽다."));
-        */
         commentListAdapter = new CommentAdapter(post_item.this,comment_listArrayList);
         comment_list.setAdapter(commentListAdapter);
         comment_cnt=comment_listArrayList.size();
@@ -141,21 +128,14 @@ public class post_item extends AppCompatActivity implements View.OnClickListener
                 System.out.println("$$$");
                 post_heart_count.setText(Integer.toString(heart_cnt));
                 postRef.child("heart_count").setValue(Integer.toString(heart_cnt));
-                //myRef.child("community").child(groupname).child("post").get
                 break;
             case R.id.comment_submit_button:
                 EditText editText = (EditText)findViewById(R.id.comment_mycomment);
                 System.out.println("ok");
                 comment_mycontent = editText.getText().toString();
                 comment_cnt++;
-                postRef.child("comment").child(Integer.toString(comment_cnt)).push().setValue(comment_mycontent);//이부분 에서는 댓글쓴이의 아이콘 입력
-                postRef.child("comment").child(Integer.toString(comment_cnt)).push().setValue(GetUserData.picLink);
-                /*
-                comment_listArrayList.add(new comment_item(R.mipmap.ic_launcher,comment_mycontent));
-                comment_cnt=comment_listArrayList.size();
-                post_comment_count.setText(comment_cnt);
-                */
-                //myRef.child("community").child(groupname).child("post").push().setValue(new comment_item(R.mipmap.ic_launcher, "fdsfa@navet.com", comment_mycontent));
+                postRef.child("comment").child(Integer.toString(comment_cnt)).child("comment_content").setValue(comment_mycontent);//이부분 에서는 댓글쓴이의 아이콘 입력
+                postRef.child("comment").child(Integer.toString(comment_cnt)).child("comment_img").setValue("2131558400");
                 break;
         }
     }

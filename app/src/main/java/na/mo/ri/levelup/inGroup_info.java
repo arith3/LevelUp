@@ -39,13 +39,42 @@ public class inGroup_info extends AppCompatActivity {
         ingroup_info_desire3textview=(TextView)findViewById(R.id.ingroup_info_desire3);
         ingroup_info_titletextview=(TextView)findViewById(R.id.ingroup_info_title);
         ingroup_info_image=(ImageView)findViewById(R.id.ingroup_info_img);
-        /*
+
+
+/*
+        if (GetUserData.inView_Group.equals(GetUserData.com1[0])) {
+            ingroup_info_titletextview.setText(GetUserData.com1[1]);
+            ingroup_info_desire1textview.setText(GetUserData.com1[2]);
+            ingroup_info_desire2textview.setText(GetUserData.com1[3]);
+            ingroup_info_desire3textview.setText(GetUserData.com1[4]);
+            ingroup_info_contenttextview.setText(GetUserData.com1[5]);
+            //ingroup_info_image.setImageResource();
+        }
+        else if(GetUserData.inView_Group.equals(GetUserData.com2[0])) {
+            ingroup_info_titletextview.setText(GetUserData.com2[1]);
+            ingroup_info_desire1textview.setText(GetUserData.com2[2]);
+            ingroup_info_desire2textview.setText(GetUserData.com2[3]);
+            ingroup_info_desire3textview.setText(GetUserData.com2[4]);
+            ingroup_info_contenttextview.setText(GetUserData.com2[5]);
+            //ingroup_info_image.setImageResource();
+        }
+        else{
+            ingroup_info_titletextview.setText(GetUserData.com3[1]);
+            ingroup_info_desire1textview.setText(GetUserData.com3[2]);
+            ingroup_info_desire2textview.setText(GetUserData.com3[3]);
+            ingroup_info_desire3textview.setText(GetUserData.com3[4]);
+            ingroup_info_contenttextview.setText(GetUserData.com3[5]);
+            //ingroup_info_image.setImageResource();
+        }
+        */
+
+
         ingroup_info_titletextview.setText("제목");
         ingroup_info_desire1textview.setText("욕구1내용");
         ingroup_info_desire2textview.setText("욕구2내용");
         ingroup_info_desire3textview.setText("욕구3내용");
         ingroup_info_contenttextview.setText("자기소개내용");
-        */
+
 
 
     }
