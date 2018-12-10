@@ -14,19 +14,21 @@ public class GetNewCommunityActivity extends AppCompatActivity {
     TextView titleM;
     TextView nowPeo;
     TextView nowPer;
-    String tmp;
+
     int status = 0;
+    int randIs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_get_new_community);
         titleM = findViewById(R.id.gazua);
-
+        titleM.setText(GetUserData.inView_Group);
         nowPeo = findViewById(R.id.nowPeople);
-
+        nowPeo.setText(GetUserData.nownum+"명 참여중");
         nowPer = findViewById(R.id.nowPercent);
-
+        randIs = (int) (Math.random()*100) + 1;
+        nowPer.setText(randIs+"% 진행중");
         inside = findViewById(R.id.butttttttt);
         inside.setOnClickListener(new View.OnClickListener() {
             @Override
