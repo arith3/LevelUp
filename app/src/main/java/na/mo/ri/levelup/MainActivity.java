@@ -94,10 +94,10 @@ public class MainActivity extends AppCompatActivity implements Button.OnClickLis
                 final EditText editID = findViewById(R.id.editText);
                 final EditText editPS = findViewById(R.id.editText2);
 
-                //String mailad = editID.getText().toString().trim();
-                //String passwd = editPS.getText().toString().trim();
-                String mailad = "na@mo.ri";
-                String passwd = "namori";
+                String mailad = editID.getText().toString().trim();
+                String passwd = editPS.getText().toString().trim();
+//                String mailad = "na@mo.ri";
+//                String passwd = "namori";
                 if(mailad.length() < 2 || passwd.length() < 2) {
                     Toast.makeText(MainActivity.this, "입력 정보를 확인하세요!", Toast.LENGTH_SHORT).show();
                     break;

@@ -44,7 +44,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/profile_imageView"
         android:layout_toRightOf="@+id/IdTitle_textView"
-        android:text="" />
+        android:text="namori@ajou.ac.kr" />
 
     <TextView
         android:id="@+id/ListTitle_textView"

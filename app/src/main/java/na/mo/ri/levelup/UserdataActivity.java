@@ -24,7 +24,9 @@ public class UserdataActivity extends AppCompatActivity {
 
         myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
-        stst.setText(GetUserData.email);
+
+        //stst.findViewById(R.id.Id_textView);
+        //stst.setText("namori@ajou.ac.kr");
 
     }
 
