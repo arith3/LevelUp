@@ -44,7 +44,7 @@ public class PeriodActivity extends AppCompatActivity {
         //커버플로우 적용할 Sample dummy 데이터를 넣습니다.
         list.add(new DoWorkEntity("토익을 하는 사람들의 모임:\n 1. 리딩 chapter2 인증하기  \n 2. 단어 30개 \n 3. 리스닝 Chapter3   ", 1));
         list.add(new DoWorkEntity("다이어터 ♡ :\n 1. 플랭크 20 SET  \n 2. 런닝 뛰고 30 분 인증 \n 3. 보증금 찾아가기", 1));
-        list.add(new DoWorkEntity("현사모 \n 1. 현주니랑 밥먹기  \n 2. 현주니랑 만화보기 \n 3. 현주니랑 밥먹기 ", 0));
+        list.add(new DoWorkEntity("현사모 \n 1. 현주니랑 밥먹기  \n 2. 현주니랑 만화보기 \n 3. 현주니랑 밥먹기 ", 1));
         list.add(new DoWorkEntity("Cover 4", 0));
 
         mCoverFlowCustomAdapter = new CoverFlowCustomAdapter(this);
