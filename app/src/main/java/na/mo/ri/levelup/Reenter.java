@@ -33,6 +33,7 @@ public class Reenter extends AppCompatActivity implements View.OnClickListener {
     private String reenter_content;
     private EditText reentertextview;
     private EditText reentercontentview;
+    TextView tv1;
     private Button reenter_button;
     private int in_group_ppl_count;
     private String group_num="";
@@ -68,6 +69,8 @@ public class Reenter extends AppCompatActivity implements View.OnClickListener {
         reentercontentview=(EditText)findViewById(R.id.reenter_content);
         reenter_button=(Button)findViewById(R.id.reenter_button);
         reenter_button.setOnClickListener(this);
+        tv1 = findViewById(R.id.textView4);
+        tv1.setText(Suzukaze.Aoba[1] + " 입니다.");
 
     }
 
@@ -75,12 +78,8 @@ public class Reenter extends AppCompatActivity implements View.OnClickListener {
 
         switch (v.getId()){
             case R.id.reenter_button :
-
-
-
-
+                Suzukaze.Aoba[5] = tv1.getText().toString();
                 if(GetUserData.com1[0].equals("1")){
-
                     myRef.child(GetUserData.key).child("cList").child("com1").child("goal0").setValue(GetUserData.inView_Group);
                     myRef.child(GetUserData.key).child("cList").child("com1").child("goal1").setValue(reentertextview.getText().toString());
                     myRef.child(GetUserData.key).child("cList").child("com1").child("goal5").setValue(reentercontentview.getText().toString());

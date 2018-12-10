@@ -6,7 +6,7 @@ public class GetUserData {
     static String key="f@ff!ff";
     static String inView_Group="금연";
     static String inView_Post;
-    static int nownum;
+    static String nownum;
     static String picLink;
     static String[] com1 = {"1","1","1","1","1","1","1","1","1"};
     static String[] com2 = {"1","1","1","1","1","1","1","1","1"};

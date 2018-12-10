@@ -28,7 +28,7 @@ public class CommunityListActivity extends AppCompatActivity {
     private EditText searchhh;
     int forint = 0;
     String[] whatislove;
-    int[] kotkoro;
+    String[] kotkoro;
     DatabaseReference gData = FirebaseDatabase.getInstance().getReference().child("community");
 
     @Override
@@ -48,10 +48,10 @@ public class CommunityListActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 forint = toIntExact(dataSnapshot.getChildrenCount());
                 whatislove = new String[forint];
-                kotkoro = new int[forint];
+                kotkoro = new String[forint];
                 for(int i = 0; i < forint; i++) {
                     whatislove[i] = (String) dataSnapshot.child(Integer.toString(i+1)).child("name").getValue();
-                    kotkoro[i] = Integer.parseInt((String) dataSnapshot.child(Integer.toString(i+1)).child("ppl_count").getValue());
+                    kotkoro[i] = (String) dataSnapshot.child(Integer.toString(i+1)).child("ppl_count").getValue();
                     // 버튼 생성
                     final Button btn = new Button(CommunityListActivity.this);
                     // setId 버튼에 대한 키값

@@ -48,6 +48,7 @@
                 <TextView
                     android:id="@+id/content_cirecle_01"
                     android:layout_width="wrap_content"
+                    android:layout_margin="5dp"
                     android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
                     android:text="○"
@@ -63,6 +64,7 @@
                     android:layout_marginTop="0dp"
                     android:layout_toRightOf="@+id/content_cirecle_01"
                     android:text="존재 욕구를"
+                    android:textStyle="bold"
                     android:textColor="#181818"
                     android:textSize="15dp" />
 
@@ -93,6 +95,7 @@
             <RelativeLayout
                 android:id="@+id/content_view_02"
                 android:layout_width="match_parent"
+                android:layout_margin="5dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/content_view_border_01"
                 android:layout_marginTop="20dp">
@@ -113,6 +116,7 @@
                     android:layout_marginLeft="5dp"
                     android:layout_toRightOf="@+id/content_cirecle_02"
                     android:text="관계 욕구를"
+                    android:textStyle="bold"
                     android:textColor="#181818"
                     android:textSize="15dp" />
 
@@ -138,6 +142,7 @@
 
             <RelativeLayout
                 android:id="@+id/content_view_03"
+                android:layout_margin="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/content_view_border_02"
@@ -159,6 +164,7 @@
                     android:layout_marginLeft="5dp"
                     android:layout_toRightOf="@+id/content_cirecle_03"
                     android:text="성장 욕구를"
+                    android:textStyle="bold"
                     android:textColor="#181818"
                     android:textSize="15dp" />
 
