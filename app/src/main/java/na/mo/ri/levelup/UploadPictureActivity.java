@@ -24,7 +24,7 @@ import java.util.List;
 
 import na.mo.ri.levelup.dialog.ImageLoaderDialogListener;
 import na.mo.ri.levelup.dialog.TwobuttonDialog;
-
+//사진업로드
 
 public class UploadPictureActivity extends AppCompatActivity {
     public final static int REQUEST_PERMISSIONS = 0x01;
