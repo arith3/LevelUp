@@ -5,17 +5,27 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class GetNewCommunityActivity extends AppCompatActivity {
 
     private Button inside;
+    TextView titleM;
+    TextView nowPeo;
+    TextView nowPer;
+    String tmp;
     int status = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_get_new_community);
+        titleM = findViewById(R.id.gazua);
+
+        nowPeo = findViewById(R.id.nowPeople);
+
+        nowPer = findViewById(R.id.nowPercent);
 
         inside = findViewById(R.id.butttttttt);
         inside.setOnClickListener(new View.OnClickListener() {
@@ -27,7 +37,6 @@ public class GetNewCommunityActivity extends AppCompatActivity {
                     Intent iiiit = new Intent(GetNewCommunityActivity.this, UploadPictureActivity.class);
                     startActivity(iiiit);
                 }
-
             }
         });
 

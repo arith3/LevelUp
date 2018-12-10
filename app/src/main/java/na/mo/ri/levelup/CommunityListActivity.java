@@ -27,9 +27,8 @@ public class CommunityListActivity extends AppCompatActivity {
     private Button searccc;
     private EditText searchhh;
     int forint = 0;
-    String[] forstr;
     String whatislove;
-    ArrayList<String> alal;
+    int kotkoro;
     DatabaseReference gData = FirebaseDatabase.getInstance().getReference().child("community");
 
     @Override
@@ -37,7 +36,6 @@ public class CommunityListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_community_list);
 
-        alal = new ArrayList<String>();
         container = (LinearLayout) findViewById(R.id.inLinear);
         LinearLayout.LayoutParams params = new LinearLayout.
                 LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
@@ -52,12 +50,11 @@ public class CommunityListActivity extends AppCompatActivity {
 
                 for(int i = 0; i < forint; i++) {
                     whatislove = (String) dataSnapshot.child(Integer.toString(i+1)).child("name").getValue();
-
+                    kotkoro = Integer.parseInt((String) dataSnapshot.child(Integer.toString(i+1)).child("ppl_count").getValue());
                     // 버튼 생성
                     final Button btn = new Button(CommunityListActivity.this);
                     // setId 버튼에 대한 키값
                     btn.setId(i + 1);
-                    System.out.println("SSIBAL###==========="+alal.size());
                     btn.setText(whatislove + " 가즈아~");
 
                     btn.setLayoutParams(params);
@@ -67,7 +64,8 @@ public class CommunityListActivity extends AppCompatActivity {
                     btn.setOnClickListener(new View.OnClickListener() {
                         public void onClick(View v) {
                             Log.d("log", "position :" + position);
-                            GetUserData.inView_Group = forstr[position] + " 가즈아~";
+                            GetUserData.inView_Group = whatislove + " 가즈아~";
+                            GetUserData.nownum = kotkoro;
                             //Toast.makeText(getApplicationContext(), "클릭한 position: " + position, Toast.LENGTH_SHORT).show();
                             Intent iiir = new Intent(CommunityListActivity.this, GetNewCommunityActivity.class);
                             startActivity(iiir);
