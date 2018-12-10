@@ -26,7 +26,6 @@ import static java.lang.Math.toIntExact;
 
 public class Reenter extends AppCompatActivity implements View.OnClickListener {
 
-    private EditText reentertextview;
     private EditText reentercontentview;
     TextView tv1;
     private Button reenter_button;
@@ -41,14 +40,14 @@ public class Reenter extends AppCompatActivity implements View.OnClickListener {
         reenter_button=(Button)findViewById(R.id.reenter_button);
         reenter_button.setOnClickListener(this);
         tv1 = findViewById(R.id.textView4);
-        tv1.setText(Suzukaze.Aoba[1] + " 입니다.");
+        tv1.setText("\""+Suzukaze.Aoba[1] + "\" 입니다.");
     }
 
     public void onClick(View v) {
 
         switch (v.getId()){
             case R.id.reenter_button :
-                Suzukaze.Aoba[5] = tv1.getText().toString();
+                Suzukaze.Aoba[5] = reentercontentview.getText().toString();
 
                 Intent intent = new Intent(
                         getApplicationContext(), // 현재 화면의 제어권자
