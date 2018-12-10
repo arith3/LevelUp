@@ -16,7 +16,6 @@
         android:layout_marginStart="13dp"
         android:layout_marginTop="10dp"
         android:text="나의 목표는?"
-
         android:textSize="18dp" />
 
     <TextView
@@ -35,20 +34,20 @@
         android:layout_width="150dp"
         android:layout_height="60dp"
         android:layout_centerHorizontal="true"
-
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="20dp"
         android:text="설정 완료" />
 
-
     <EditText
         android:id="@+id/reenter_content"
         android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:margin ="10dp"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_above="@id/reenter_button"
+        android:layout_marginBottom="50dp"
+        android:layout_marginTop="50dp"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/textView4"
-        android:layout_marginTop="100dp"
         android:ems="10"
         android:hint="  앞서 정리한 내용을 바탕으로,\n  구체적인 목표를 작성해주세요.\n  그룹원 모두가 볼 수 있습니다." />
 

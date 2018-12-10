@@ -1,6 +1,7 @@
 package na.mo.ri.levelup;
 
 import android.support.annotation.NonNull;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -18,13 +19,13 @@ class UserData {
     private String[] com2 = {"1","1","1","1","1","1","1","1","1"};
     private String[] com3 = {"1","1","1","1","1","1","1","1","1"};
 
-    DatabaseReference mData = FirebaseDatabase.getInstance().getReference().child("user");
+    DatabaseReference mData = FirebaseDatabase.getInstance().getReference();
 
     public UserData(String eMail) {
 
         eMail = eMail.replace(".", "!");
-        GetUserData.key=eMail;
-        DatabaseReference mUser = mData.child(eMail);
+        GetUserData.key = eMail;
+        DatabaseReference mUser = mData.child("user").child(eMail);
         mUser.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -179,14 +180,21 @@ class UserData {
         }
     }
 
-    void easyComSet(String[] arr) {
+    void hitoCountInc(String group) {
+        mData.child("community").child(group).setValue(GetUserData.nownum + 1);
+    }
+
+    boolean easyComSet(String[] arr) {
         if(com1[0].equals("1")) {
             setUserCom1(arr);
         } else if(com2[0].equals("1")) {
             setUserCom2(arr);
-        } else {
+        } else if(com3[0].equals("1")) {
             setUserCom3(arr);
+        } else {
+            return false;
         }
         DataUpdate();
+        return true;
     }
 }

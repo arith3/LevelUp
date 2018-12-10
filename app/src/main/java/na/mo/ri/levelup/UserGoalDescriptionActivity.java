@@ -31,17 +31,17 @@ public class UserGoalDescriptionActivity extends AppCompatActivity {
         mGrowth = (TextView) findViewById(R.id.growth);
 
         btn1.setOnClickListener(v -> {
+            Suzukaze.Aoba[2] = ed1.getText().toString();
+            Suzukaze.Aoba[3] = ed2.getText().toString();
+            Suzukaze.Aoba[4] = ed3.getText().toString();
             Intent intent = new Intent(UserGoalDescriptionActivity.this, Reenter.class);
             startActivity(intent);
             // overridePendingTransition(R.anim.activity_forward_enter, R.anim.activity_forward_exit);
         });
 
         ed1 = findViewById(R.id.editText8);
-        Suzukaze.Aoba[2] = ed1.getText().toString();
         ed2 = findViewById(R.id.editText23);
-        Suzukaze.Aoba[3] = ed2.getText().toString();
         ed3 = findViewById(R.id.editText24);
-        Suzukaze.Aoba[4] = ed3.getText().toString();
 
         mSurvival.setOnClickListener(v -> showDialog("존재 욕구:\n목표 달성을 통해 어떤 자신의 가치를 발전시킬지? \nex)프로그래밍을 통한 가치 향상"));
 

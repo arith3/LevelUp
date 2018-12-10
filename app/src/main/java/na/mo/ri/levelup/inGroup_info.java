@@ -7,6 +7,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -26,9 +27,8 @@ public class inGroup_info extends AppCompatActivity {
     private TextView ingroup_info_desire1textview;
     private TextView ingroup_info_desire2textview;
     private TextView ingroup_info_desire3textview;
-
-    FirebaseDatabase database=FirebaseDatabase.getInstance();
-    DatabaseReference myRef = database.getReference();
+    Button gaip;
+    private UserData udt;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,33 +40,62 @@ public class inGroup_info extends AppCompatActivity {
         ingroup_info_titletextview=(TextView)findViewById(R.id.ingroup_info_title);
         ingroup_info_image=(ImageView)findViewById(R.id.ingroup_info_img);
 
+        System.out.println("SUZUKAZE DATA------------" + Suzukaze.Aoba[0]);
+        System.out.println("SUZUKAZE DATA------------" + Suzukaze.Aoba[1]);
+        System.out.println("SUZUKAZE DATA------------" + Suzukaze.Aoba[2]);
+        System.out.println("SUZUKAZE DATA------------" + Suzukaze.Aoba[3]);
+        System.out.println("SUZUKAZE DATA------------" + Suzukaze.Aoba[4]);
+        System.out.println("SUZUKAZE DATA------------" + Suzukaze.Aoba[5]);
+        System.out.println("SUZUKAZE DATA------------" + Suzukaze.Aoba[6]);
+        System.out.println("SUZUKAZE DATA------------" + Suzukaze.Aoba[7]);
+        System.out.println("SUZUKAZE DATA------------" + Suzukaze.Aoba[8]);
 
+        ingroup_info_titletextview.setText(Suzukaze.Aoba[1]);
+        ingroup_info_desire1textview.setText(Suzukaze.Aoba[2]);
+        ingroup_info_desire2textview.setText(Suzukaze.Aoba[3]);
+        ingroup_info_desire3textview.setText(Suzukaze.Aoba[4]);
+        ingroup_info_contenttextview.setText(Suzukaze.Aoba[5]);
 
-        if (GetUserData.inView_Group.equals(GetUserData.com1[0])) {
-            ingroup_info_titletextview.setText(GetUserData.com1[1]);
-            ingroup_info_desire1textview.setText(GetUserData.com1[2]);
-            ingroup_info_desire2textview.setText(GetUserData.com1[3]);
-            ingroup_info_desire3textview.setText(GetUserData.com1[4]);
-            ingroup_info_contenttextview.setText(GetUserData.com1[5]);
-            //ingroup_info_image.setImageResource();
-        }
-        else if(GetUserData.inView_Group.equals(GetUserData.com2[0])) {
-            ingroup_info_titletextview.setText(GetUserData.com2[1]);
-            ingroup_info_desire1textview.setText(GetUserData.com2[2]);
-            ingroup_info_desire2textview.setText(GetUserData.com2[3]);
-            ingroup_info_desire3textview.setText(GetUserData.com2[4]);
-            ingroup_info_contenttextview.setText(GetUserData.com2[5]);
-            //ingroup_info_image.setImageResource();
-        }
-        else{
-            ingroup_info_titletextview.setText(GetUserData.com3[1]);
-            ingroup_info_desire1textview.setText(GetUserData.com3[2]);
-            ingroup_info_desire2textview.setText(GetUserData.com3[3]);
-            ingroup_info_desire3textview.setText(GetUserData.com3[4]);
-            ingroup_info_contenttextview.setText(GetUserData.com3[5]);
-            //ingroup_info_image.setImageResource();
-        }
+        udt = new UserData(GetUserData.email);
 
+        gaip = findViewById(R.id.gagaip);
+        gaip.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(), "onClick!", Toast.LENGTH_SHORT).show();
+                if(udt.easyComSet(Suzukaze.Aoba)) {
+                    udt.hitoCountInc(Suzukaze.groupNum);
+                } else {
+                    Toast.makeText(getApplicationContext(), "가입 가능 커뮤니티 초과!", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+//        if (GetUserData.inView_Group.equals(GetUserData.com1[0])) {
+//            ingroup_info_titletextview.setText(GetUserData.com1[1]);
+//            ingroup_info_desire1textview.setText(GetUserData.com1[2]);
+//            ingroup_info_desire2textview.setText(GetUserData.com1[3]);
+//            ingroup_info_desire3textview.setText(GetUserData.com1[4]);
+//            ingroup_info_contenttextview.setText(GetUserData.com1[5]);
+//            //ingroup_info_image.setImageResource();
+//        }
+//        else if(GetUserData.inView_Group.equals(GetUserData.com2[0])) {
+//            ingroup_info_titletextview.setText(GetUserData.com2[1]);
+//            ingroup_info_desire1textview.setText(GetUserData.com2[2]);
+//            ingroup_info_desire2textview.setText(GetUserData.com2[3]);
+//            ingroup_info_desire3textview.setText(GetUserData.com2[4]);
+//            ingroup_info_contenttextview.setText(GetUserData.com2[5]);
+//            //ingroup_info_image.setImageResource();
+//        }
+//        else{
+//            ingroup_info_titletextview.setText(GetUserData.com3[1]);
+//            ingroup_info_desire1textview.setText(GetUserData.com3[2]);
+//            ingroup_info_desire2textview.setText(GetUserData.com3[3]);
+//            ingroup_info_desire3textview.setText(GetUserData.com3[4]);
+//            ingroup_info_contenttextview.setText(GetUserData.com3[5]);
+//            //ingroup_info_image.setImageResource();
+//        }
+//
 
 /*
         ingroup_info_titletextview.setText("제목");
