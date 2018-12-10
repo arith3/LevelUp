@@ -17,6 +17,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
+
 import static java.lang.Math.toIntExact;
 
 public class CommunityListActivity extends AppCompatActivity {
@@ -26,6 +28,8 @@ public class CommunityListActivity extends AppCompatActivity {
     private EditText searchhh;
     int forint = 0;
     String[] forstr;
+    String whatislove;
+    ArrayList<String> alal;
     DatabaseReference gData = FirebaseDatabase.getInstance().getReference().child("community");
 
     @Override
@@ -33,6 +37,7 @@ public class CommunityListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_community_list);
 
+        alal = new ArrayList<String>();
         container = (LinearLayout) findViewById(R.id.inLinear);
         LinearLayout.LayoutParams params = new LinearLayout.
                 LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
@@ -44,10 +49,31 @@ public class CommunityListActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 forint = toIntExact(dataSnapshot.getChildrenCount());
-                forstr = new String[forint];
+
                 for(int i = 0; i < forint; i++) {
-                    forstr[i] = dataSnapshot.child("1").child("name").getValue().toString();
-                    System.out.println("SSIBAL!!!======"+forstr[i]+"=="+Integer.toString(i));
+                    whatislove = (String) dataSnapshot.child(Integer.toString(i+1)).child("name").getValue();
+
+                    // 버튼 생성
+                    final Button btn = new Button(CommunityListActivity.this);
+                    // setId 버튼에 대한 키값
+                    btn.setId(i + 1);
+                    System.out.println("SSIBAL###==========="+alal.size());
+                    btn.setText(whatislove + " 가즈아~");
+
+                    btn.setLayoutParams(params);
+                    btn.setTextSize(15);
+
+                    final int position = i;
+                    btn.setOnClickListener(new View.OnClickListener() {
+                        public void onClick(View v) {
+                            Log.d("log", "position :" + position);
+                            GetUserData.inView_Group = forstr[position] + " 가즈아~";
+                            //Toast.makeText(getApplicationContext(), "클릭한 position: " + position, Toast.LENGTH_SHORT).show();
+                            Intent iiir = new Intent(CommunityListActivity.this, GetNewCommunityActivity.class);
+                            startActivity(iiir);
+                        }
+                    });
+                    container.addView(btn);
                 }
             }
 
@@ -66,28 +92,29 @@ public class CommunityListActivity extends AppCompatActivity {
         });
 
 
-        for(int i = 0; i < 3; i++) {
-
-            // 버튼 생성
-            final Button btn = new Button(this);
-            // setId 버튼에 대한 키값
-            btn.setId(i + 1);
-            btn.setText(""+forstr[i]+" 가즈아~");
-
-            btn.setLayoutParams(params);
-            btn.setTextSize(15);
-
-            final int position = i;
-            btn.setOnClickListener(new View.OnClickListener() {
-                public void onClick(View v) {
-                    Log.d("log", "position :" + position);
-                    GetUserData.inView_Group = forstr[position] + "가즈아~";
-                    //Toast.makeText(getApplicationContext(), "클릭한 position: " + position, Toast.LENGTH_SHORT).show();
-                    Intent iiir = new Intent(CommunityListActivity.this, GetNewCommunityActivity.class);
-                    startActivity(iiir);
-                }
-            });
-            container.addView(btn);
-        }
+//        for(int i = 0; i < 4; i++) {
+//
+//            // 버튼 생성
+//            final Button btn = new Button(this);
+//            // setId 버튼에 대한 키값
+//            btn.setId(i + 1);
+//            System.out.println("SSIBAL###==========="+alal.size());
+//            btn.setText("sdd");
+//
+//            btn.setLayoutParams(params);
+//            btn.setTextSize(15);
+//
+//            final int position = i;
+//            btn.setOnClickListener(new View.OnClickListener() {
+//                public void onClick(View v) {
+//                    Log.d("log", "position :" + position);
+//                    GetUserData.inView_Group = forstr[position] + "가즈아~";
+//                    //Toast.makeText(getApplicationContext(), "클릭한 position: " + position, Toast.LENGTH_SHORT).show();
+//                    Intent iiir = new Intent(CommunityListActivity.this, GetNewCommunityActivity.class);
+//                    startActivity(iiir);
+//                }
+//            });
+//            container.addView(btn);
+//        }
     }
 }
