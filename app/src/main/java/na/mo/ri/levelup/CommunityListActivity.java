@@ -56,7 +56,7 @@ public class CommunityListActivity extends AppCompatActivity {
                     final Button btn = new Button(CommunityListActivity.this);
                     // setId 버튼에 대한 키값
                     btn.setId(i + 1);
-                    btn.setText(whatislove[i] + " 가즈아~");
+                    btn.setText(whatislove[i]);
 
                     btn.setLayoutParams(params);
                     btn.setTextSize(15);
@@ -65,7 +65,7 @@ public class CommunityListActivity extends AppCompatActivity {
                     btn.setOnClickListener(new View.OnClickListener() {
                         public void onClick(View v) {
                             Log.d("log", "position :" + position);
-                            GetUserData.inView_Group = whatislove[position] + " 가즈아~";
+                            GetUserData.inView_Group = whatislove[position];
                             GetUserData.nownum = kotkoro[position];
                             //Toast.makeText(getApplicationContext(), "클릭한 position: " + position, Toast.LENGTH_SHORT).show();
                             Intent iiir = new Intent(CommunityListActivity.this, GetNewCommunityActivity.class);

@@ -35,7 +35,7 @@ public class UploadPictureActivity extends AppCompatActivity {
     private TextView mEmptyText;
     private ImageView mPhoto;
     private Uri mCameraUri = null;
-    String[] ssiba = {"토익뽀사버리기","1","1","1","1","1","1","1","1"};
+    String[] ssiba = {"1","1","1","1","1","1","1","1","1"};
     UserData ud1;
 
     @Override
@@ -57,6 +57,8 @@ public class UploadPictureActivity extends AppCompatActivity {
         }
         ud1 = new UserData(tetemp);
         mPeriodMoveButton.setOnClickListener(v -> {
+            ssiba[0] = GetUserData.inView_Group;
+            System.out.println("UPLOAD PIC============="+ssiba);
             ud1.easyComSet(ssiba);
             Intent intent = new Intent(UploadPictureActivity.this, PeriodActivity.class);
             startActivity(intent);
