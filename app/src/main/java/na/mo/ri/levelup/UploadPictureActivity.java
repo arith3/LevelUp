@@ -35,8 +35,6 @@ public class UploadPictureActivity extends AppCompatActivity {
     private TextView mEmptyText;
     private ImageView mPhoto;
     private Uri mCameraUri = null;
-    String[] ssiba = {"1","1","1","1","1","1","1","1","1"};
-    UserData ud1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,17 +47,9 @@ public class UploadPictureActivity extends AppCompatActivity {
         mEmptyText.setOnClickListener(mPeriodEditResultListener);
         mPeriodContentText.setOnClickListener(mPeriodEditResultListener);
         mPhoto.setOnClickListener(mPohtoListener);
-        String tetemp;
-        if(GetUserData.email == null) {
-            tetemp = "na@mo.ri";
-        } else {
-            tetemp = GetUserData.email;
-        }
-        ud1 = new UserData(tetemp);
+
         mPeriodMoveButton.setOnClickListener(v -> {
-            ssiba[0] = GetUserData.inView_Group;
-            System.out.println("UPLOAD PIC============="+ssiba);
-            ud1.easyComSet(ssiba);
+            Suzukaze.Aoba[0] = GetUserData.inView_Group;
             Intent intent = new Intent(UploadPictureActivity.this, PeriodActivity.class);
             startActivity(intent);
            // overridePendingTransition(R.anim.activity_forward_enter, R.anim.activity_forward_exit);
@@ -89,7 +79,7 @@ public class UploadPictureActivity extends AppCompatActivity {
                 mEmptyText.setVisibility(View.INVISIBLE);
                 mPeriodContentText.setVisibility(View.VISIBLE);
                 mPeriodContentText.setText(text);
-                ssiba[1] = text;
+                Suzukaze.Aoba[1] = text;
             }
 
             @Override

@@ -29,6 +29,8 @@ public class GetNewCommunityActivity extends AppCompatActivity {
         nowPer = findViewById(R.id.nowPercent);
         randIs = (int) (Math.random()*100) + 1;
         nowPer.setText(randIs+"% 진행중");
+        if(!Suzukaze.Aoba[0].equals("1"))
+            Suzukaze.ini(); //Array 초기화(뒤로가기 할 경우를 대비)
         inside = findViewById(R.id.butttttttt);
         inside.setOnClickListener(new View.OnClickListener() {
             @Override

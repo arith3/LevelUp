@@ -11,6 +11,7 @@ import android.widget.TextView;
 import na.mo.ri.levelup.App;
 import na.mo.ri.levelup.PeriodActivity;
 import na.mo.ri.levelup.R;
+import na.mo.ri.levelup.Suzukaze;
 import na.mo.ri.levelup.dialog.CompleteListener;
 
 
@@ -59,6 +60,7 @@ public class PeriodMonthFragment extends Fragment {
                     mEmptyText.setVisibility(View.GONE);
                     mPeriodContentText.setVisibility(View.VISIBLE);
                     mPeriodContentText.setText(text);
+                    Suzukaze.Aoba[8] = text;
                 }
             });
         }
