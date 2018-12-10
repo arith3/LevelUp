@@ -82,7 +82,7 @@ class UserData {
     }
 
     public void DataUpdate() {
-        DatabaseReference uData = mData.child(email.replace(".","!"));
+        DatabaseReference uData = mData.child("user").child(email.replace(".","!"));
         uData.child("name").setValue(name);
         uData.child("email").setValue(email);
         uData.child("picLink").setValue(picLink);
