@@ -14,14 +14,16 @@
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/title"
+            android:id="@+id/tvtvtvtv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_marginLeft="10dp"
-            android:text="기간별 목표 설정"
-            android:textColor="#181818"
-            android:textSize="35dp" />
+            android:textStyle="bold"
+            android:text="일, 주, 월 목표를 설정하셨나요?"
+            android:textSize="20dp"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="16dp"
+            android:textColor="#000000"
+            />
 
         <LinearLayout
             android:id="@+id/root_layout"
@@ -29,6 +31,7 @@
             android:layout_height="match_parent"
             android:layout_below="@+id/title"
             android:layout_marginTop="5dp"
+            android:layout_marginBottom="60dp"
             android:orientation="vertical">
 
             <LinearLayout
@@ -69,6 +72,27 @@
 
             </LinearLayout>
         </LinearLayout>
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="10dp"
+            android:text="기간별 목표 설정"
+            android:textColor="#181818"
+            android:textSize="35dp" />
+
+        <Button
+            android:id="@+id/btnYes_or_Yes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="10dp"
+            android:layout_toRightOf="@+id/tvtvtvtv"
+            android:text="네!"
+            android:textSize="20dp"
+            android:textStyle="bold" />
     </RelativeLayout>
 </FrameLayout>
 

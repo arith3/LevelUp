@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Button;
 
 import java.util.ArrayList;
 
@@ -20,6 +22,8 @@ public class PeriodActivity extends AppCompatActivity {
     private PeriodTabFragment mPeriodTabFragment;
     private CoverFlowCustomAdapter mCoverFlowCustomAdapter;
     private FeatureCoverFlow mCoverFlow;
+    Button bbtn;
+    int btnclickcnt = 0;
 
 
     @Override
@@ -36,6 +40,21 @@ public class PeriodActivity extends AppCompatActivity {
 
 
         initCoverFlow();
+        bbtn = findViewById(R.id.btnYes_or_Yes);
+        bbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(btnclickcnt > 0) {
+                    Intent intent = new Intent(getApplicationContext(), UserGoalDescriptionActivity.class);
+                    startActivity(intent);
+                    bbtn.setText("네!");
+                    btnclickcnt = 0;
+                } else {
+                    bbtn.setText("설정완료");
+                    btnclickcnt++;
+                }
+            }
+        });
     }
 
     private void initCoverFlow() {
@@ -55,8 +74,8 @@ public class PeriodActivity extends AppCompatActivity {
             //커버플로우 적용된  ex(cover 1 ,cover 2 관련 클릭시 포지션 할당) 클릭 이벤트 처리 여기서 하시면됩니다.
 //            L.e(":::::::: " + list.get(position).getTitleResId());
 
-            Intent intent = new Intent(this, UserGoalDescriptionActivity.class);
-            startActivity(intent);
+//            Intent intent = new Intent(this, UserGoalDescriptionActivity.class);
+//            startActivity(intent);
             overridePendingTransition(R.anim.activity_forward_enter, R.anim.activity_forward_exit);
         });
 
