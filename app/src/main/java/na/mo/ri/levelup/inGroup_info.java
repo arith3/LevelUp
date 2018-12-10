@@ -1,5 +1,6 @@
 package na.mo.ri.levelup;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -29,6 +30,7 @@ public class inGroup_info extends AppCompatActivity {
     private TextView ingroup_info_desire3textview;
     Button gaip;
     private UserData udt;
+    int btnclick = 0;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,9 +67,21 @@ public class inGroup_info extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "onClick!", Toast.LENGTH_SHORT).show();
                 if(udt.easyComSet(Suzukaze.Aoba)) {
                     udt.hitoCountInc(Suzukaze.groupNum);
+                    Toast.makeText(getApplicationContext(), "커뮤니티 가입 완료!", Toast.LENGTH_SHORT).show();
+                    Intent backToTheFuture = new Intent(getApplicationContext(), MyCommunityActivity.class);
+                    startActivity(backToTheFuture);
                     Suzukaze.ini();
+                    finish();
                 } else {
+                    if(btnclick > 0) {
+                        Intent backToTheFuture = new Intent(getApplicationContext(), MyCommunityActivity.class);
+                        startActivity(backToTheFuture);
+                        Suzukaze.ini();
+                        finish();
+                    }
                     Toast.makeText(getApplicationContext(), "가입 가능 커뮤니티 초과!", Toast.LENGTH_SHORT).show();
+                    gaip.setText("내 커뮤니티 목록으로 돌아가기");
+                    btnclick++;
                 }
             }
         });
