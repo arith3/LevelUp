@@ -65,6 +65,7 @@ public class inGroup_info extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "onClick!", Toast.LENGTH_SHORT).show();
                 if(udt.easyComSet(Suzukaze.Aoba)) {
                     udt.hitoCountInc(Suzukaze.groupNum);
+                    Suzukaze.ini();
                 } else {
                     Toast.makeText(getApplicationContext(), "가입 가능 커뮤니티 초과!", Toast.LENGTH_SHORT).show();
                 }

@@ -103,9 +103,9 @@ class UserData {
         uData.child("cList").child("com2").child("goal2").setValue(com2[3]);
         uData.child("cList").child("com2").child("goal3").setValue(com2[4]);
         uData.child("cList").child("com2").child("goal4").setValue(com2[5]);
-        uData.child("cList").child("com2").child("goalD").setValue(com1[6]);
-        uData.child("cList").child("com2").child("goalW").setValue(com1[7]);
-        uData.child("cList").child("com2").child("goalM").setValue(com1[8]);
+        uData.child("cList").child("com2").child("goalD").setValue(com2[6]);
+        uData.child("cList").child("com2").child("goalW").setValue(com2[7]);
+        uData.child("cList").child("com2").child("goalM").setValue(com2[8]);
 
         uData.child("cList").child("com3").child("name").setValue(com3[0]);
         uData.child("cList").child("com3").child("goal0").setValue(com3[1]);
@@ -113,9 +113,9 @@ class UserData {
         uData.child("cList").child("com3").child("goal2").setValue(com3[3]);
         uData.child("cList").child("com3").child("goal3").setValue(com3[4]);
         uData.child("cList").child("com3").child("goal4").setValue(com3[5]);
-        uData.child("cList").child("com3").child("goalD").setValue(com1[6]);
-        uData.child("cList").child("com3").child("goalW").setValue(com1[7]);
-        uData.child("cList").child("com3").child("goalM").setValue(com1[8]);
+        uData.child("cList").child("com3").child("goalD").setValue(com3[6]);
+        uData.child("cList").child("com3").child("goalW").setValue(com3[7]);
+        uData.child("cList").child("com3").child("goalM").setValue(com3[8]);
     }
 
     public void setUserName(String namae) {
@@ -130,16 +130,19 @@ class UserData {
     public void setUserCom1(String[] arr) {
         for(int i = 0; i < 9; i++) {
             com1[i] = arr[i];
+            System.out.println("SUZUKAZE COMD--------------" + com1[i]);
         }
     }
     public void setUserCom2(String[] arr) {
         for(int i = 0; i < 9; i++) {
             com2[i] = arr[i];
+            System.out.println("SUZUKAZE COMD--------------" + com2[i]);
         }
     }
     public void setUserCom3(String[] arr) {
         for(int i = 0; i < 9; i++) {
             com3[i] = arr[i];
+            System.out.println("SUZUKAZE COMD--------------" + com3[i]);
         }
     }
     public String getUserName() {
