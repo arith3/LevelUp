@@ -23,6 +23,7 @@ class UserData {
     public UserData(String eMail) {
 
         eMail = eMail.replace(".", "!");
+        GetUserData.key=eMail;
         DatabaseReference mUser = mData.child(eMail);
         mUser.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
