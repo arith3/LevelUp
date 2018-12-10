@@ -19,7 +19,7 @@
             android:id="@+id/btnadd"
             android:layout_margin="30sp"
             android:background="#d2e42d"
-            android:text="새로운 + 스터디"
+            android:text="새 커뮤니티 추가"
             android:textSize="44sp"
             android:textStyle="bold"
             />
@@ -29,7 +29,7 @@
             android:id="@+id/Commu_btn"
             android:layout_margin="30sp"
 
-            android:text="금연 가즈아"
+            android:text="금연 가즈아 커뮤니티"
             android:textSize="30sp"
 
             />

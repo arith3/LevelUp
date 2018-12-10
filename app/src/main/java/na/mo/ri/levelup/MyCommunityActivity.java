@@ -12,7 +12,6 @@ import android.widget.Toast;
 public class MyCommunityActivity extends AppCompatActivity {
 
     private LinearLayout container;
-    private int number = 3;
     private Button addNew;
     private Button Commu_btn;
 
@@ -53,38 +52,37 @@ public class MyCommunityActivity extends AppCompatActivity {
 //        if(GetUserData.com3[0].equals("1"))
 //            number--;
 
-        System.out.println("SSIBAL!!!---"+GetUserData.name);
-        System.out.println("SSIBAL!!!---"+GetUserData.email);
-        System.out.println("SSIBAL!!!---"+GetUserData.picLink);
-        System.out.println("SSIBAL!!!---"+GetUserData.com2[0]);
         String tnmp;
-        //number = 23;
-        for(int i = 0; i < number; i++) {
-
-            // 버튼 생성
-            final Button btn = new Button(this);
-            // setId 버튼에 대한 키값
-            btn.setId(i + 1);
+        for(int i = 0; i < 3; i++) {
             if(i == 0) {
                 tnmp = GetUserData.com1[0];
             } else if(i == 1) {
                 tnmp = GetUserData.com2[0];
             } else
                 tnmp = GetUserData.com3[0];
+            if(tnmp.equals("1"))
+                continue;
+            // 버튼 생성
+            final Button btn = new Button(this);
+            // setId 버튼에 대한 키값
+            btn.setId(i + 1);
+
             btn.setLayoutParams(params);
-            btn.setText(tnmp);
+            btn.setText(tnmp+" 커뮤니티");
             btn.setTextSize(30);
 
             final int position = i;
             btn.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
                     Log.d("log", "position :" + position);
-                    Toast.makeText(getApplicationContext(), "클릭한 position:" + position, Toast.LENGTH_LONG).show();
+                    //Toast.makeText(getApplicationContext(), "클릭한 position:" + position, Toast.LENGTH_LONG).show();
+                    //선택한 커뮤니티 이름: tnmp
+                    //선택한 커뮤니티 번호: com123에 번호 추가..?
+                    Intent goActi = new Intent(MyCommunityActivity.this, CommunityTabActivity.class);
+                    startActivity(goActi);
                 }
-
             });
-            if(tnmp.equals("1")) {}
-            else {container.addView(btn);}
+            container.addView(btn);
         }
 
     }

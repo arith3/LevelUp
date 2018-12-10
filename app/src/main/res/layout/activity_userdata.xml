@@ -22,12 +22,11 @@
 
     <ImageView
         android:id="@+id/profile_imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
         android:layout_centerHorizontal="true"
-        android:paddingTop="20dp"
-        android:paddingBottom="40dp"
-        app:srcCompat="@mipmap/ic_launcher" />
+        android:layout_marginBottom="20dp"
+        app:srcCompat="@drawable/aoba" />
 
     <TextView
         android:id="@+id/IdTitle_textView"
@@ -45,7 +44,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/profile_imageView"
         android:layout_toRightOf="@+id/IdTitle_textView"
-        android:text="TextView" />
+        android:text="" />
 
     <TextView
         android:id="@+id/ListTitle_textView"
@@ -62,7 +61,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/IdTitle_textView"
         android:layout_toRightOf="@+id/ListTitle_textView"
-        android:text="TextView" />
+        android:text="구현 중" />
         <TextView
             android:id="@+id/shortGoalTitle_textView"
             android:layout_width="wrap_content"
@@ -78,7 +77,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/ListTitle_textView"
             android:layout_toRightOf="@+id/shortGoalTitle_textView"
-            android:text="TextView" />
+            android:text="구현 중" />
 
     </RelativeLayout>
 

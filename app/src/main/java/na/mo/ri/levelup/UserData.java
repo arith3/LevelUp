@@ -198,6 +198,7 @@ class UserData {
             return false;
         }
         DataUpdate();
+        statUpdate();
         return true;
     }
 }
