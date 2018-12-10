@@ -25,6 +25,7 @@ public class MyListAdapter extends BaseAdapter {
 
     public MyListAdapter(Context context, ArrayList<list_item> list_itemArrayList) {
         this.context = context;
+
         this.list_itemArrayList = list_itemArrayList;
     }
     @Override
@@ -62,7 +63,6 @@ public class MyListAdapter extends BaseAdapter {
         title_textView.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 GetUserData.inView_Post = list_itemArrayList.get(position).getNum();
-                Suzukaze.groupNum = Integer.toString(position);
                 //Toast.makeText(getApplicationContext(), "클릭한 position: " + position, Toast.LENGTH_SHORT).show();
                 context.startActivity(new Intent(context, post_item.class));
             }

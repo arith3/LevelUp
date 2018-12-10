@@ -136,6 +136,7 @@ public class post_item extends AppCompatActivity implements View.OnClickListener
                 comment_listArrayList.add(temp);
                 commentListAdapter = new CommentAdapter(post_item.this,comment_listArrayList);
                 comment_list.setAdapter(commentListAdapter);
+
                 break;
         }
     }

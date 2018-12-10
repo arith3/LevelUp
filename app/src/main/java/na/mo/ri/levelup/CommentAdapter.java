@@ -20,6 +20,7 @@ public class CommentAdapter extends BaseAdapter {
 
     public CommentAdapter(Context context, ArrayList<comment_item> comment_itemArrayList){
         this.context = context;
+
         this.comment_itemArrayList = comment_itemArrayList;
     }
 

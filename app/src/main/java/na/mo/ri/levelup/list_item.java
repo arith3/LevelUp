@@ -56,6 +56,7 @@ public class list_item {
     public list_item(int profile_image, String nickname, String title, String write_date, String content,String num) {
         this.profile_image = profile_image;
         this.nickname = nickname;
+
         this.title = title;
         this.write_date = write_date;
         this.content = content;

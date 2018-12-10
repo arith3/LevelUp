@@ -12,6 +12,7 @@ public class comment_item {
     }
 
     public void setComment_content(String comment_content) {
+
         this.comment_content = comment_content;
     }
 

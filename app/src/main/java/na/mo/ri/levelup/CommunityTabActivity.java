@@ -44,6 +44,7 @@ public class CommunityTabActivity  extends AppCompatActivity {
             // Get Post object and use the values to update the U
 
             list_itemArrayList = new ArrayList<list_item>();
+
             post_cnt=toIntExact(dataSnapshot.child("post").getChildrenCount());
             for(int i=1;i<=post_cnt;i++){
                 list_item temp = new list_item(R.mipmap.ic_launcher,(String)dataSnapshot.child("post").child(GetUserData.inView_Post).child("name").getValue(),(String)dataSnapshot.child("post").child(GetUserData.inView_Post).child("title").getValue(),(String)dataSnapshot.child("post").child(GetUserData.inView_Post).child("date").getValue(),(String)dataSnapshot.child("post").child(GetUserData.inView_Post).child("content").getValue(),Integer.toString(i));
