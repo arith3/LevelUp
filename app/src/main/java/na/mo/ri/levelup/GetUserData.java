@@ -4,8 +4,8 @@ public class GetUserData {
     static String name;
     static String email;
     static String key="f@ff!ff";
-    static String inView_Group="금연";
-    static String inView_Post;
+    static String inView_Group="1";
+    static String inView_Post="1";
     static String nownum;
     static String picLink;
     static String[] com1 = {"1","1","1","1","1","1","1","1","1"};

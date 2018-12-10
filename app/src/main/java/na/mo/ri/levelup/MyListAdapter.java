@@ -1,6 +1,9 @@
 package na.mo.ri.levelup;
 
 import android.content.Context;
+import android.content.Intent;
+import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -43,6 +46,7 @@ public class MyListAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         if(convertView==null){
+
             convertView = LayoutInflater.from(context).inflate(R.layout.list_item,null);
             nickname_textView = (TextView)convertView.findViewById(R.id.nickname_textView);
             content_textView = (TextView)convertView.findViewById(R.id.content_textView);
@@ -55,6 +59,14 @@ public class MyListAdapter extends BaseAdapter {
         content_textView.setText(list_itemArrayList.get(position).getContent());
         date_textView.setText(list_itemArrayList.get(position).getWrite_date().toString());
         profile_imageView.setImageResource(list_itemArrayList.get(position).getProfile_image());
+        title_textView.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                GetUserData.inView_Post = list_itemArrayList.get(position).getNum();
+                Suzukaze.groupNum = Integer.toString(position);
+                //Toast.makeText(getApplicationContext(), "클릭한 position: " + position, Toast.LENGTH_SHORT).show();
+                context.startActivity(new Intent(context, post_item.class));
+            }
+        });
         return convertView;
     }
 }

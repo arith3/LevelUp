@@ -52,8 +52,8 @@ public class post_item extends AppCompatActivity implements View.OnClickListener
     private ListView comment_list;
     CommentAdapter commentListAdapter;
 
-    DatabaseReference postRef = FirebaseDatabase.getInstance().getReference().child("community").child("1").child("post").child("1");
-    DatabaseReference myRef = FirebaseDatabase.getInstance().getReference().child("community").child("1").child("post").child("1");
+    DatabaseReference postRef = FirebaseDatabase.getInstance().getReference().child("community").child(GetUserData.inView_Group).child("post").child(GetUserData.inView_Post);
+    DatabaseReference myRef = FirebaseDatabase.getInstance().getReference().child("community").child(GetUserData.inView_Group).child("post").child(GetUserData.inView_Post);
     ValueEventListener postListener = new ValueEventListener() {
         @Override
 
@@ -122,7 +122,6 @@ public class post_item extends AppCompatActivity implements View.OnClickListener
         switch (v.getId()) {
             case R.id.heart_button:
                 heart_cnt++;//ddddd
-                System.out.println("$$$");
                 post_heart_count.setText(Integer.toString(heart_cnt));
                 postRef.child("heart_count").setValue(Integer.toString(heart_cnt));
                 break;

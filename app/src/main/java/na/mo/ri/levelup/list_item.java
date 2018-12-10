@@ -6,8 +6,9 @@ public class list_item {
     private int profile_image;
     private String nickname;
     private String title;
-    private Date write_date;
+    private String write_date;
     private String content;
+    private String num;
 
     public int getProfile_image() {
         return profile_image;
@@ -43,19 +44,21 @@ public class list_item {
         this.content = content;
     }
 
-    public Date getWrite_date() {
+    public String getWrite_date() {
         return write_date;
     }
 
-    public void setWrite_date(Date write_date) {
+    public void setWrite_date(String write_date) {
         this.write_date = write_date;
     }
 
-    public list_item(int profile_image, String nickname, String title, Date write_date, String content) {
+    public String getNum(){return num;}
+    public list_item(int profile_image, String nickname, String title, String write_date, String content,String num) {
         this.profile_image = profile_image;
         this.nickname = nickname;
         this.title = title;
         this.write_date = write_date;
         this.content = content;
+        this.num=num;
     }
 }

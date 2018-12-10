@@ -4,15 +4,26 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TabHost;
 import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 import java.util.ArrayList;
 import java.util.Date;
+
+import static java.lang.Math.toIntExact;
 
 
 public class CommunityTabActivity  extends AppCompatActivity {
@@ -22,9 +33,37 @@ public class CommunityTabActivity  extends AppCompatActivity {
     MyRankAdapter myRankAdapter;
     ArrayList<list_item> list_itemArrayList;
     ArrayList<rank_item> rank_itemArrayList;
-
+    int post_cnt=0;
     Toolbar myToolbar;
+    DatabaseReference postRef = FirebaseDatabase.getInstance().getReference().child("community").child("1").child("post").child("1");
+    DatabaseReference myRef = FirebaseDatabase.getInstance().getReference().child("community").child(GetUserData.inView_Group);
+    ValueEventListener postListener = new ValueEventListener() {
+        @Override
 
+        public void onDataChange(DataSnapshot dataSnapshot) {
+            // Get Post object and use the values to update the U
+
+            list_itemArrayList = new ArrayList<list_item>();
+            post_cnt=toIntExact(dataSnapshot.child("post").getChildrenCount());
+            for(int i=1;i<=post_cnt;i++){
+                list_item temp = new list_item(R.mipmap.ic_launcher,(String)dataSnapshot.child("post").child(GetUserData.inView_Post).child("name").getValue(),(String)dataSnapshot.child("post").child(GetUserData.inView_Post).child("title").getValue(),(String)dataSnapshot.child("post").child(GetUserData.inView_Post).child("date").getValue(),(String)dataSnapshot.child("post").child(GetUserData.inView_Post).child("content").getValue(),Integer.toString(i));
+
+                list_itemArrayList.add(temp);
+            }
+
+            // ...
+            myListAdapter = new MyListAdapter(CommunityTabActivity.this,list_itemArrayList);
+            listView.setAdapter(myListAdapter);
+
+        }
+
+        @Override
+        public void onCancelled(DatabaseError databaseError) {
+            // Getting Post failed, log a message
+            Log.w("post_item", "loadPost:onCancelled", databaseError.toException());
+            // ...
+        }
+    };
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,9 +75,10 @@ public class CommunityTabActivity  extends AppCompatActivity {
         listView = (ListView)findViewById(R.id.my_listview);
         rankView = (ListView) findViewById(R.id.my_rankview);
 
-        list_itemArrayList = new ArrayList<list_item>();
-        rank_itemArrayList = new ArrayList<rank_item>();
 
+        rank_itemArrayList = new ArrayList<rank_item>();
+        myRef.addListenerForSingleValueEvent(postListener);
+        /*
         list_itemArrayList.add(
                 new list_item(R.mipmap.ic_launcher,"보라돌이","제목1",new Date(System.currentTimeMillis()),"내용1"));
         list_itemArrayList.add(
@@ -49,9 +89,10 @@ public class CommunityTabActivity  extends AppCompatActivity {
                 new list_item(R.mipmap.ic_launcher,"뽀","제목4",new Date(System.currentTimeMillis()),"내용4"));
         list_itemArrayList.add(
                 new list_item(R.mipmap.ic_launcher,"햇님","제목5",new Date(System.currentTimeMillis()),"내용5"));
+        */
 
-        myListAdapter = new MyListAdapter(CommunityTabActivity.this,list_itemArrayList);
-        listView.setAdapter(myListAdapter);
+
+
 
        rank_itemArrayList.add(
                new rank_item("1위", R.mipmap.ic_launcher,80,"80%"));
@@ -116,6 +157,14 @@ public class CommunityTabActivity  extends AppCompatActivity {
                 // Invoke the superclass to handle it.
                 Toast.makeText(getApplicationContext(), "나머지 버튼 클릭됨", Toast.LENGTH_LONG).show();
                 return super.onOptionsItemSelected(item);
+        }
+    }
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.heart_button:
+                break;
+            case R.id.comment_submit_button:
+                break;
         }
     }
 }
