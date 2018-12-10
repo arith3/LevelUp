@@ -135,6 +135,8 @@ public class post_item extends AppCompatActivity implements View.OnClickListener
                 postRef.child("comment").child(Integer.toString(comment_cnt)).child("comment_img").setValue("2131558400");
                 comment_item temp=new comment_item(2131558400,comment_mycontent);
                 comment_listArrayList.add(temp);
+                commentListAdapter = new CommentAdapter(post_item.this,comment_listArrayList);
+                comment_list.setAdapter(commentListAdapter);
                 break;
         }
     }
