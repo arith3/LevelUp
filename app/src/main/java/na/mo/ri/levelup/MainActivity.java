@@ -1,8 +1,15 @@
 package na.mo.ri.levelup;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.v4.app.NotificationCompat;
+import android.support.v4.app.NotificationManagerCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -16,6 +23,8 @@ import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 
+import java.sql.Time;
+
 public class MainActivity extends AppCompatActivity implements Button.OnClickListener {
 
     FirebaseAuth mAuth;
@@ -24,10 +33,28 @@ public class MainActivity extends AppCompatActivity implements Button.OnClickLis
     ProgressBar pgb;
     Button btnSin;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Thread thth = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                while(true) {
+                    System.out.println("THREAD---------------------THREAD");
+                    createNotification();
+                    try {
+                        Thread.sleep(1000*3);
+
+                    } catch(InterruptedException e) {
+                        e.printStackTrace();
+                    }}
+            }
+        });
+        thth.start();
 
         myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
@@ -88,9 +115,7 @@ public class MainActivity extends AppCompatActivity implements Button.OnClickLis
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.SignInBtn:
-                pgb.setVisibility(ProgressBar.VISIBLE);
-                //pgb.setIndeterminate(true);
-                btnSin.setText("로그인중..");
+                //createNotification();
                 final EditText editID = findViewById(R.id.editText);
                 final EditText editPS = findViewById(R.id.editText2);
 
@@ -102,6 +127,8 @@ public class MainActivity extends AppCompatActivity implements Button.OnClickLis
                     Toast.makeText(MainActivity.this, "입력 정보를 확인하세요!", Toast.LENGTH_SHORT).show();
                     break;
                 } else {
+                    pgb.setVisibility(ProgressBar.VISIBLE);
+                    btnSin.setText("로그인중..");
                     mAuth.signInWithEmailAndPassword(mailad, passwd).addOnCompleteListener(MainActivity.this, task -> {
                         if (task.isSuccessful()) {
                             uData = new UserData(mailad);
@@ -125,5 +152,32 @@ public class MainActivity extends AppCompatActivity implements Button.OnClickLis
                 startActivity(intent);
                 break;
         }
+    }
+    //////////////////////알림부분
+    private void createNotification() {
+
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(this, "default");
+
+        builder.setSmallIcon(R.drawable.aoba);
+        builder.setContentTitle("LevelUp 할 시간입니다!");
+        String[] arr = {"다른 팀원들은 모두 끝냈는데 언제 하실건가요?","JAVA마스터 인증에 댓글이 달렸습니다.","토익 목표를 달성하고 싶으신가요?","계획없는 순간의 즐거움만 찾지 마세요~"};
+        builder.setContentText(arr[((int) (Math.random()*100))%arr.length]);
+
+        builder.setColor(Color.RED);
+        // 사용자가 탭을 클릭하면 자동 제거(추후수정가)
+        builder.setAutoCancel(true);
+
+        // 알림 표시
+        NotificationManager notificationManager = (NotificationManager) this.getSystemService(Context.NOTIFICATION_SERVICE);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            notificationManager.createNotificationChannel(new NotificationChannel("default", "기본 채널", NotificationManager.IMPORTANCE_DEFAULT));
+        }
+
+        notificationManager.notify(1, builder.build());
+    }
+
+    private void removeNotification() {
+
+        NotificationManagerCompat.from(this).cancel(1);
     }
 }
