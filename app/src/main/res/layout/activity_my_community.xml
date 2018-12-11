@@ -28,7 +28,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/Commu_btn"
             android:layout_margin="30sp"
-
+            android:visibility="invisible"
             android:text="금연 가즈아 커뮤니티"
             android:textSize="30sp"
 

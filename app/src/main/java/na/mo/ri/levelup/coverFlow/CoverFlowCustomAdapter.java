@@ -74,7 +74,7 @@ public class CoverFlowCustomAdapter extends BaseAdapter {
         ViewHolder holder = (ViewHolder) rowView.getTag();
 
         //holder.image.setImageResource(mData.get(position).getImageResId());
-        holder.image.setImageResource(R.drawable.coverimage);
+        holder.image.setImageResource(R.drawable.bgapple);
         holder.text.setText(mData.get(position).getTitleResId());
 
         return rowView;
