@@ -9,6 +9,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -16,6 +19,8 @@ public class UserdataActivity extends AppCompatActivity {
 
     Toolbar myToolbar;
     TextView stst;
+    EditText et;
+    Button btbt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +32,16 @@ public class UserdataActivity extends AppCompatActivity {
 
         //stst.findViewById(R.id.Id_textView);
         //stst.setText("namori@ajou.ac.kr");
-
+        et = findViewById(R.id.editText4);
+        btbt = findViewById(R.id.setbtt);
+        btbt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String nick = et.getText().toString();
+                GetUserData.name = nick;
+                Toast.makeText(getApplicationContext(), "변경 완료!", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     @Override

@@ -20,7 +20,35 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/my_toolbar">
 
-    <ImageView
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/profile_imageView"
+            android:paddingLeft="20dp"
+            android:id="@+id/asasasas"
+            android:paddingRight="10dp"
+            android:text="Name : "/>
+        <EditText
+            android:id="@+id/editText4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:layout_below="@+id/profile_imageView"
+            android:layout_toRightOf="@+id/asasasas"
+            android:inputType="textPersonName"
+            android:text="User" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="변경하기"
+            android:id="@+id/setbtt"
+            android:textStyle="bold"
+            android:layout_toRightOf="@+id/editText4"
+            android:layout_below="@+id/profile_imageView"
+            android:layout_marginStart="20dp"
+            />
+
+        <ImageView
         android:id="@+id/profile_imageView"
         android:layout_width="200dp"
         android:layout_height="200dp"
@@ -32,17 +60,16 @@
         android:id="@+id/IdTitle_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/profile_imageView"
+        android:layout_below="@+id/editText4"
         android:paddingLeft="20dp"
         android:paddingRight="10dp"
-        android:text="ID : "
-        />
+        android:text="ID : " />
 
     <TextView
         android:id="@+id/Id_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/profile_imageView"
+        android:layout_below="@+id/editText4"
         android:layout_toRightOf="@+id/IdTitle_textView"
         android:text="namori@ajou.ac.kr" />
 

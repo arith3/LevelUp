@@ -27,6 +27,7 @@
             android:background="@drawable/border"
             android:layout_width="match_parent"
             android:layout_height="229dp"
+            android:padding="10dp"
             android:orientation="vertical">
 
             <TextView
@@ -63,7 +64,7 @@
 
                 <TextView
                     android:id="@+id/post_heart_cnt"
-                    android:layout_width="34dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:autoSizeTextType="uniform"
                     android:text="TextView" />
@@ -76,7 +77,7 @@
 
                 <TextView
                     android:id="@+id/post_comment_cnt"
-                    android:layout_width="30dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:autoSizeTextType="uniform"
                     android:text="TextView" />

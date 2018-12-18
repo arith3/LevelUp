@@ -137,13 +137,13 @@ public class CommunityTabActivity  extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.action_settings:
                 // User chose the "Settings" item, show the app settings UI...
-                Toast.makeText(getApplicationContext(), "나의 정보 버튼 클릭됨", Toast.LENGTH_LONG).show();
-                Intent intent = new Intent(getApplicationContext(), SignupActivity.class);
+                //Toast.makeText(getApplicationContext(), "나의 정보 버튼 클릭됨", Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(getApplicationContext(), UserdataActivity.class);
                 startActivity(intent);
                 return true;
             case R.id.action_settings2:
                 // User chose the "Settings" item, show the app settings UI...
-                Toast.makeText(getApplicationContext(), "수행현황 버튼 클릭됨", Toast.LENGTH_LONG).show();
+                //Toast.makeText(getApplicationContext(), "수행현황 버튼 클릭됨", Toast.LENGTH_LONG).show();
                 Intent intent1 = new Intent(getApplicationContext(), MyInfoActivity.class);
                 startActivity(intent1);
                 return true;
