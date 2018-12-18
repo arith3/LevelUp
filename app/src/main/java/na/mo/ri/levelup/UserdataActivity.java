@@ -33,6 +33,8 @@ public class UserdataActivity extends AppCompatActivity {
         //stst.findViewById(R.id.Id_textView);
         //stst.setText("namori@ajou.ac.kr");
         et = findViewById(R.id.editText4);
+        stst = findViewById(R.id.Id_textView);
+        stst.setText(GetUserData.email);
         btbt = findViewById(R.id.setbtt);
         btbt.setOnClickListener(new View.OnClickListener() {
             @Override
