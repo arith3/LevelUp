@@ -15,6 +15,7 @@ public class CommentAdapter extends BaseAdapter {
     Context context;
     ArrayList<comment_item> comment_itemArrayList;
 
+    TextView name;
     ImageView icon;
     TextView comment_context;
 
@@ -43,10 +44,11 @@ public class CommentAdapter extends BaseAdapter {
         if (convertView == null) {
             convertView = LayoutInflater.from(context).inflate(R.layout.comment_item, null);
             icon = (ImageView) convertView.findViewById(R.id.comment_item_img);
+            name = (TextView)convertView.findViewById(R.id.comment_nickname);
             comment_context = (TextView) convertView.findViewById(R.id.comment_item_context);
         }
         icon.setImageResource(comment_itemArrayList.get(position).getComment_image());
-
+        name.setText(comment_itemArrayList.get(position).getComment_name());
         comment_context.setText(comment_itemArrayList.get(position).getComment_content());
         return convertView;
     }

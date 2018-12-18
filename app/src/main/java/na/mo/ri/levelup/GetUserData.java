@@ -1,7 +1,7 @@
 package na.mo.ri.levelup;
 
 public class GetUserData {
-    static String name;
+    static String name="na@mo.ri";
     static String email;
     static String key="f@ff!ff";
     static String inView_Group="1";

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class comment_item {
     private String comment_content;
-    private String user_email;
+    private String comment_name;
     private int comment_image;
 
     public String getComment_content() {
@@ -12,8 +12,15 @@ public class comment_item {
     }
 
     public void setComment_content(String comment_content) {
-
         this.comment_content = comment_content;
+    }
+    public String getComment_name() {
+        return comment_name;
+    }
+
+    public void setComment_name(String comment_name) {
+
+        this.comment_name = comment_name;
     }
 
     public int getComment_image() {
@@ -28,9 +35,9 @@ public class comment_item {
         this.comment_image = comment_image;
         this.comment_content=comment_content;
     }
-    public comment_item(int comment_image, String user_email,String comment_content) {
+    public comment_item(int comment_image, String comment_name,String comment_content) {
         this.comment_image = comment_image;
-        this.user_email=user_email;
+        this.comment_name=comment_name;
         this.comment_content=comment_content;
     }
 }

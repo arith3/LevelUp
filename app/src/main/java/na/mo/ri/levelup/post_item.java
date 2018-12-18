@@ -132,10 +132,13 @@ public class post_item extends AppCompatActivity implements View.OnClickListener
                 comment_cnt++;
                 postRef.child("comment").child(Integer.toString(comment_cnt)).child("comment_content").setValue(comment_mycontent);//이부분 에서는 댓글쓴이의 아이콘 입력
                 postRef.child("comment").child(Integer.toString(comment_cnt)).child("comment_img").setValue("2131558400");
-                comment_item temp=new comment_item(2131558400,comment_mycontent);
+                postRef.child("comment").child(Integer.toString(comment_cnt)).child("comment_name").setValue(GetUserData.name);
+                comment_item temp=new comment_item(2131558400,GetUserData.name,comment_mycontent);
                 comment_listArrayList.add(temp);
                 commentListAdapter = new CommentAdapter(post_item.this,comment_listArrayList);
                 comment_list.setAdapter(commentListAdapter);
+                editText.setText(""); // 댓글 추가후, editText부분 초기화
+                Toast.makeText(getApplicationContext(), "댓글이 등록 되었습니다.", Toast.LENGTH_LONG).show();
 
                 break;
         }
